@@ -14,6 +14,7 @@
 		93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B28F5E1F7EEAAC0044B86A /* LaunchScreen.storyboard */; };
 		93B28F6B1F7EEAAD0044B86A /* BonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F6A1F7EEAAD0044B86A /* BonAppTests.swift */; };
 		93B28F761F7EEAAD0044B86A /* BonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */; };
+		FD52E2381F86B74B00EA9E9B /* ConfirmationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD52E23A1F86B74B00EA9E9B /* ConfirmationScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		93B28F711F7EEAAD0044B86A /* BonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAppUITests.swift; sourceTree = "<group>"; };
 		93B28F771F7EEAAD0044B86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD52E2391F86B74B00EA9E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConfirmationScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				93B28F5C1F7EEAAC0044B86A /* Assets.xcassets */,
 				93B28F5E1F7EEAAC0044B86A /* LaunchScreen.storyboard */,
 				93B28F611F7EEAAC0044B86A /* Info.plist */,
+				FD52E23A1F86B74B00EA9E9B /* ConfirmationScreen.storyboard */,
 			);
 			path = BonApp;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */,
+				FD52E2381F86B74B00EA9E9B /* ConfirmationScreen.storyboard in Resources */,
 				93B28F5D1F7EEAAC0044B86A /* Assets.xcassets in Resources */,
 				93B28F5B1F7EEAAC0044B86A /* Main.storyboard in Resources */,
 			);
@@ -311,6 +315,14 @@
 				93B28F5F1F7EEAAC0044B86A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FD52E23A1F86B74B00EA9E9B /* ConfirmationScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD52E2391F86B74B00EA9E9B /* Base */,
+			);
+			name = ConfirmationScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -508,6 +520,7 @@
 				93B28F7C1F7EEAAD0044B86A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93B28F7D1F7EEAAD0044B86A /* Build configuration list for PBXNativeTarget "BonAppTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +529,7 @@
 				93B28F7F1F7EEAAD0044B86A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93B28F801F7EEAAD0044B86A /* Build configuration list for PBXNativeTarget "BonAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +538,7 @@
 				93B28F821F7EEAAD0044B86A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
