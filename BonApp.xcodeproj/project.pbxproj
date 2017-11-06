@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		937B32F91FAAB59400A6BF47 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B32F81FAAB59400A6BF47 /* ConfirmationController.swift */; };
+		937B32FB1FAAB67900A6BF47 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B32FA1FAAB67900A6BF47 /* OrderController.swift */; };
 		93B28F561F7EEAAC0044B86A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F551F7EEAAC0044B86A /* AppDelegate.swift */; };
 		93B28F581F7EEAAC0044B86A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F571F7EEAAC0044B86A /* ViewController.swift */; };
 		93B28F5B1F7EEAAC0044B86A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B28F591F7EEAAC0044B86A /* Main.storyboard */; };
@@ -14,7 +16,6 @@
 		93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B28F5E1F7EEAAC0044B86A /* LaunchScreen.storyboard */; };
 		93B28F6B1F7EEAAD0044B86A /* BonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F6A1F7EEAAD0044B86A /* BonAppTests.swift */; };
 		93B28F761F7EEAAD0044B86A /* BonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */; };
-		FD52E2381F86B74B00EA9E9B /* ConfirmationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD52E23A1F86B74B00EA9E9B /* ConfirmationScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		937B32F81FAAB59400A6BF47 /* ConfirmationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
+		937B32FA1FAAB67900A6BF47 /* OrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		93B28F521F7EEAAC0044B86A /* BonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B28F551F7EEAAC0044B86A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B28F571F7EEAAC0044B86A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +51,6 @@
 		93B28F711F7EEAAD0044B86A /* BonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAppUITests.swift; sourceTree = "<group>"; };
 		93B28F771F7EEAAD0044B86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD52E2391F86B74B00EA9E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConfirmationScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,8 @@
 				93B28F5C1F7EEAAC0044B86A /* Assets.xcassets */,
 				93B28F5E1F7EEAAC0044B86A /* LaunchScreen.storyboard */,
 				93B28F611F7EEAAC0044B86A /* Info.plist */,
-				FD52E23A1F86B74B00EA9E9B /* ConfirmationScreen.storyboard */,
+				937B32F81FAAB59400A6BF47 /* ConfirmationController.swift */,
+				937B32FA1FAAB67900A6BF47 /* OrderController.swift */,
 			);
 			path = BonApp;
 			sourceTree = "<group>";
@@ -237,7 +240,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */,
-				FD52E2381F86B74B00EA9E9B /* ConfirmationScreen.storyboard in Resources */,
 				93B28F5D1F7EEAAC0044B86A /* Assets.xcassets in Resources */,
 				93B28F5B1F7EEAAC0044B86A /* Main.storyboard in Resources */,
 			);
@@ -264,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937B32FB1FAAB67900A6BF47 /* OrderController.swift in Sources */,
 				93B28F581F7EEAAC0044B86A /* ViewController.swift in Sources */,
+				937B32F91FAAB59400A6BF47 /* ConfirmationController.swift in Sources */,
 				93B28F561F7EEAAC0044B86A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,14 +319,6 @@
 				93B28F5F1F7EEAAC0044B86A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		FD52E23A1F86B74B00EA9E9B /* ConfirmationScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD52E2391F86B74B00EA9E9B /* Base */,
-			);
-			name = ConfirmationScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
