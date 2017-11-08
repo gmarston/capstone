@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931539201FB2ADD40099DC41 /* EmployeeApp in Resources */ = {isa = PBXBuildFile; fileRef = 9315391F1FB2ADD40099DC41 /* EmployeeApp */; };
 		937B32F91FAAB59400A6BF47 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B32F81FAAB59400A6BF47 /* ConfirmationController.swift */; };
 		937B32FB1FAAB67900A6BF47 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B32FA1FAAB67900A6BF47 /* OrderController.swift */; };
 		93B28F561F7EEAAC0044B86A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F551F7EEAAC0044B86A /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9315391F1FB2ADD40099DC41 /* EmployeeApp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EmployeeApp; path = ../../../Downloads/EmployeeApp; sourceTree = "<group>"; };
 		937B32F81FAAB59400A6BF47 /* ConfirmationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
 		937B32FA1FAAB67900A6BF47 /* OrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		93B28F521F7EEAAC0044B86A /* BonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 		93B28F491F7EEAAB0044B86A = {
 			isa = PBXGroup;
 			children = (
+				9315391F1FB2ADD40099DC41 /* EmployeeApp */,
 				93B28F541F7EEAAC0044B86A /* BonApp */,
 				93B28F691F7EEAAD0044B86A /* BonAppTests */,
 				93B28F741F7EEAAD0044B86A /* BonAppUITests */,
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931539201FB2ADD40099DC41 /* EmployeeApp in Resources */,
 				93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */,
 				93B28F5D1F7EEAAC0044B86A /* Assets.xcassets in Resources */,
 				93B28F5B1F7EEAAC0044B86A /* Main.storyboard in Resources */,
