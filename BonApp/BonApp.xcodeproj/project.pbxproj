@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		184F383DE3213EC533E0D4AC /* Pods_BonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E5B03640C1609094CABE08 /* Pods_BonApp.framework */; };
-		931539201FB2ADD40099DC41 /* EmployeeApp in Resources */ = {isa = PBXBuildFile; fileRef = 9315391F1FB2ADD40099DC41 /* EmployeeApp */; };
 		937B32F91FAAB59400A6BF47 /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B32F81FAAB59400A6BF47 /* ConfirmationController.swift */; };
 		937B32FB1FAAB67900A6BF47 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937B32FA1FAAB67900A6BF47 /* OrderController.swift */; };
 		93B28F561F7EEAAC0044B86A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F551F7EEAAC0044B86A /* AppDelegate.swift */; };
@@ -18,6 +16,7 @@
 		93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B28F5E1F7EEAAC0044B86A /* LaunchScreen.storyboard */; };
 		93B28F6B1F7EEAAD0044B86A /* BonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F6A1F7EEAAD0044B86A /* BonAppTests.swift */; };
 		93B28F761F7EEAAD0044B86A /* BonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */; };
+		EB5C1EE5FE0FD5D5AD98DF2E /* Pods_BonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139CCD909A33C69C7E0774BB /* Pods_BonApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		47E5B03640C1609094CABE08 /* Pods_BonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6506E81AABA717ADAA17A16C /* Pods-BonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonApp/Pods-BonApp.debug.xcconfig"; sourceTree = "<group>"; };
-		9315391F1FB2ADD40099DC41 /* EmployeeApp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EmployeeApp; path = ../../../Downloads/EmployeeApp; sourceTree = "<group>"; };
+		139CCD909A33C69C7E0774BB /* Pods_BonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4818CE4FD054BF60588EC430 /* Pods-BonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BonApp/Pods-BonApp.debug.xcconfig"; sourceTree = "<group>"; };
 		937B32F81FAAB59400A6BF47 /* ConfirmationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
 		937B32FA1FAAB67900A6BF47 /* OrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		93B28F521F7EEAAC0044B86A /* BonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +54,7 @@
 		93B28F711F7EEAAD0044B86A /* BonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAppUITests.swift; sourceTree = "<group>"; };
 		93B28F771F7EEAAD0044B86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBA88231EEF8580A12F88D1E /* Pods-BonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonApp/Pods-BonApp.release.xcconfig"; sourceTree = "<group>"; };
+		BEF3FBEC0835338E05BEF94C /* Pods-BonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonApp/Pods-BonApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				184F383DE3213EC533E0D4AC /* Pods_BonApp.framework in Frameworks */,
+				EB5C1EE5FE0FD5D5AD98DF2E /* Pods_BonApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,33 +83,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E3D8949A807194B72054140 /* Pods */ = {
+		747CB179F00F380B6E0FAD71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6506E81AABA717ADAA17A16C /* Pods-BonApp.debug.xcconfig */,
-				BBA88231EEF8580A12F88D1E /* Pods-BonApp.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		74468C748ECD1C627AA48E2F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				47E5B03640C1609094CABE08 /* Pods_BonApp.framework */,
+				139CCD909A33C69C7E0774BB /* Pods_BonApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87D2E7C8582BD83A3E6BE1FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4818CE4FD054BF60588EC430 /* Pods-BonApp.debug.xcconfig */,
+				BEF3FBEC0835338E05BEF94C /* Pods-BonApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		93B28F491F7EEAAB0044B86A = {
 			isa = PBXGroup;
 			children = (
-				9315391F1FB2ADD40099DC41 /* EmployeeApp */,
 				93B28F541F7EEAAC0044B86A /* BonApp */,
 				93B28F691F7EEAAD0044B86A /* BonAppTests */,
 				93B28F741F7EEAAD0044B86A /* BonAppUITests */,
 				93B28F531F7EEAAC0044B86A /* Products */,
-				0E3D8949A807194B72054140 /* Pods */,
-				74468C748ECD1C627AA48E2F /* Frameworks */,
+				87D2E7C8582BD83A3E6BE1FA /* Pods */,
+				747CB179F00F380B6E0FAD71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,12 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93B28F7A1F7EEAAD0044B86A /* Build configuration list for PBXNativeTarget "BonApp" */;
 			buildPhases = (
-				0C31F634DCDC2BDDA5D6D6F9 /* [CP] Check Pods Manifest.lock */,
+				CCD9AA11B5A32ABB96D7C353 /* [CP] Check Pods Manifest.lock */,
 				93B28F4E1F7EEAAB0044B86A /* Sources */,
 				93B28F4F1F7EEAAB0044B86A /* Frameworks */,
 				93B28F501F7EEAAB0044B86A /* Resources */,
-				B3E803F2EC747BCCAED71778 /* [CP] Embed Pods Frameworks */,
-				3C01D1E0CEB0F2C8A5072484 /* [CP] Copy Pods Resources */,
+				C1CFBBAD12B2D7183ADB56F2 /* [CP] Embed Pods Frameworks */,
+				060FBF3C6EE38434D619B9B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,7 +226,7 @@
 				TargetAttributes = {
 					93B28F511F7EEAAB0044B86A = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 72P6R5V2RG;
+						DevelopmentTeam = BWFPD36VY3;
 						ProvisioningStyle = Automatic;
 					};
 					93B28F651F7EEAAD0044B86A = {
@@ -269,7 +266,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				931539201FB2ADD40099DC41 /* EmployeeApp in Resources */,
 				93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */,
 				93B28F5D1F7EEAAC0044B86A /* Assets.xcassets in Resources */,
 				93B28F5B1F7EEAAC0044B86A /* Main.storyboard in Resources */,
@@ -293,25 +289,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C31F634DCDC2BDDA5D6D6F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BonApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3C01D1E0CEB0F2C8A5072484 /* [CP] Copy Pods Resources */ = {
+		060FBF3C6EE38434D619B9B3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -326,7 +304,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BonApp/Pods-BonApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3E803F2EC747BCCAED71778 /* [CP] Embed Pods Frameworks */ = {
+		C1CFBBAD12B2D7183ADB56F2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -376,6 +354,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BonApp/Pods-BonApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCD9AA11B5A32ABB96D7C353 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BonApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -538,13 +534,13 @@
 		};
 		93B28F7B1F7EEAAD0044B86A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6506E81AABA717ADAA17A16C /* Pods-BonApp.debug.xcconfig */;
+			baseConfigurationReference = 4818CE4FD054BF60588EC430 /* Pods-BonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 72P6R5V2RG;
+				DEVELOPMENT_TEAM = BWFPD36VY3;
 				INFOPLIST_FILE = BonApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonApp;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -552,13 +548,13 @@
 		};
 		93B28F7C1F7EEAAD0044B86A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBA88231EEF8580A12F88D1E /* Pods-BonApp.release.xcconfig */;
+			baseConfigurationReference = BEF3FBEC0835338E05BEF94C /* Pods-BonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 72P6R5V2RG;
+				DEVELOPMENT_TEAM = BWFPD36VY3;
 				INFOPLIST_FILE = BonApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonApp;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
