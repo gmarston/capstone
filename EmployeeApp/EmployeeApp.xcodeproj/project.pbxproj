@@ -16,6 +16,7 @@
 		DE4D30321F86D0390034D7C1 /* EmployeeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D30311F86D0390034D7C1 /* EmployeeAppTests.swift */; };
 		DE4D303D1F86D03A0034D7C1 /* EmployeeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D303C1F86D03A0034D7C1 /* EmployeeAppUITests.swift */; };
 		DE4D304B1F86DA070034D7C1 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D304A1F86DA070034D7C1 /* OrderTableViewCell.swift */; };
+		DEC4B5D01FBBF92E00F36C0B /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B5CE1FBBEF8300F36C0B /* OrderTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		DE4D303C1F86D03A0034D7C1 /* EmployeeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAppUITests.swift; sourceTree = "<group>"; };
 		DE4D303E1F86D03A0034D7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = EmployeeAppUITests/Info.plist; sourceTree = "<group>"; };
 		DE4D304A1F86DA070034D7C1 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderTableViewCell.swift; path = ../OrderTableViewCell.swift; sourceTree = "<group>"; };
+		DEC4B5CE1FBBEF8300F36C0B /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		ED5BCDB9F45AE97AA36709B3 /* Pods-EmployeeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeApp/Pods-EmployeeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				DE4D301C1F86D0250034D7C1 /* AppDelegate.swift */,
 				DE4D301E1F86D0260034D7C1 /* ViewController.swift */,
 				DE4D30201F86D0260034D7C1 /* Main.storyboard */,
+				DEC4B5CE1FBBEF8300F36C0B /* OrderTableViewController.swift */,
 				DE4D30231F86D0270034D7C1 /* Assets.xcassets */,
 				DE4D30251F86D0270034D7C1 /* LaunchScreen.storyboard */,
 				DE4D304A1F86DA070034D7C1 /* OrderTableViewCell.swift */,
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC4B5D01FBBF92E00F36C0B /* OrderTableViewController.swift in Sources */,
 				DE4D304B1F86DA070034D7C1 /* OrderTableViewCell.swift in Sources */,
 				DE4D301F1F86D0260034D7C1 /* ViewController.swift in Sources */,
 				DE4D301D1F86D0250034D7C1 /* AppDelegate.swift in Sources */,
