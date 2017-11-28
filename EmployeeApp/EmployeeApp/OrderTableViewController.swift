@@ -2,7 +2,7 @@
 //  OrderTableViewController.swift
 //  EmployeeApp
 //
-//  Created by Briahna Santillana on 11/14/17.
+//  Created by Briahna Santillana on 11/27/17.
 //  Copyright © 2017 Briahna Santillana. All rights reserved.
 //
 
@@ -12,14 +12,13 @@ class OrderTableViewController: UITableViewController {
     
     //MARK: Properties
     
-//    var orders = [Order]()
-    
+    var orders = [Order]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // Load the sample data.
-//        loadSampleOrders()
 
+        // Load the sample data.
+        loadSampleOrders()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,24 +29,33 @@ class OrderTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return orders.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+         // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "OrderTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? OrderTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of OrderTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let order = orders[indexPath.row]
+        
+        cell.orderNumberLabel.text! = order.orderNumber
+        cell.orderNameLabel.text = order.orderName
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -96,13 +104,14 @@ class OrderTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-//    private func loadSampleOrders() {
-//        guard let order1 = orders(orderNumber: "1", customerName: "Dr.Chakrabarti") else {
-//            fatalError("Unable to instantiate meal1")
-//        }
-//
-//        orders += [order1]
-//
-//    }
+    private func loadSampleOrders() {
+        
+        guard let order1 = Order(orderNumber: "#1", orderName: "Dr. Chakrabarti") else {
+            fatalError("Unable to instantiate order1")
+        }
+        
+        orders += [order1]
+        
+    }
 
 }

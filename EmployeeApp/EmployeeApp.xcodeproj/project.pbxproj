@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		8F58179C192C51BCCE17674E /* Pods_EmployeeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351EC69A2866FA2DEE9B5A22 /* Pods_EmployeeApp.framework */; };
+		DE2213BB1FCCFB71003D88B3 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2213BA1FCCFB71003D88B3 /* OrderTableViewController.swift */; };
+		DE2213C01FCCFFD3003D88B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D301C1F86D0250034D7C1 /* AppDelegate.swift */; };
+		DE2213C11FCCFFD4003D88B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D301C1F86D0250034D7C1 /* AppDelegate.swift */; };
+		DE2213C41FCD0ACE003D88B3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2213C31FCD0ACD003D88B3 /* Order.swift */; };
 		DE4D301D1F86D0250034D7C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D301C1F86D0250034D7C1 /* AppDelegate.swift */; };
-		DE4D301F1F86D0260034D7C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D301E1F86D0260034D7C1 /* ViewController.swift */; };
 		DE4D30221F86D0260034D7C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4D30201F86D0260034D7C1 /* Main.storyboard */; };
 		DE4D30241F86D0270034D7C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE4D30231F86D0270034D7C1 /* Assets.xcassets */; };
 		DE4D30271F86D0270034D7C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE4D30251F86D0270034D7C1 /* LaunchScreen.storyboard */; };
 		DE4D30321F86D0390034D7C1 /* EmployeeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D30311F86D0390034D7C1 /* EmployeeAppTests.swift */; };
 		DE4D303D1F86D03A0034D7C1 /* EmployeeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D303C1F86D03A0034D7C1 /* EmployeeAppUITests.swift */; };
-		DE4D304B1F86DA070034D7C1 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D304A1F86DA070034D7C1 /* OrderTableViewCell.swift */; };
-		DEC4B5D01FBBF92E00F36C0B /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B5CE1FBBEF8300F36C0B /* OrderTableViewController.swift */; };
+		DE57FA931FCCBF540085FEEF /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57FA921FCCBF530085FEEF /* OrderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +41,10 @@
 /* Begin PBXFileReference section */
 		351EC69A2866FA2DEE9B5A22 /* Pods_EmployeeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169EABAAEB6007D39EF7FF1 /* Pods-EmployeeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeApp/Pods-EmployeeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DE2213BA1FCCFB71003D88B3 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		DE2213C31FCD0ACD003D88B3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		DE4D30191F86D0240034D7C1 /* EmployeeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4D301C1F86D0250034D7C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE4D301E1F86D0260034D7C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE4D30211F86D0260034D7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE4D30231F86D0270034D7C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE4D30261F86D0270034D7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,8 +55,7 @@
 		DE4D30381F86D03A0034D7C1 /* EmployeeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4D303C1F86D03A0034D7C1 /* EmployeeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAppUITests.swift; sourceTree = "<group>"; };
 		DE4D303E1F86D03A0034D7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = EmployeeAppUITests/Info.plist; sourceTree = "<group>"; };
-		DE4D304A1F86DA070034D7C1 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderTableViewCell.swift; path = ../OrderTableViewCell.swift; sourceTree = "<group>"; };
-		DEC4B5CE1FBBEF8300F36C0B /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		DE57FA921FCCBF530085FEEF /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		ED5BCDB9F45AE97AA36709B3 /* Pods-EmployeeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeApp/Pods-EmployeeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,12 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				DE4D301C1F86D0250034D7C1 /* AppDelegate.swift */,
-				DE4D301E1F86D0260034D7C1 /* ViewController.swift */,
+				DE2213BA1FCCFB71003D88B3 /* OrderTableViewController.swift */,
+				DE2213C31FCD0ACD003D88B3 /* Order.swift */,
+				DE57FA921FCCBF530085FEEF /* OrderTableViewCell.swift */,
 				DE4D30201F86D0260034D7C1 /* Main.storyboard */,
-				DEC4B5CE1FBBEF8300F36C0B /* OrderTableViewController.swift */,
 				DE4D30231F86D0270034D7C1 /* Assets.xcassets */,
 				DE4D30251F86D0270034D7C1 /* LaunchScreen.storyboard */,
-				DE4D304A1F86DA070034D7C1 /* OrderTableViewCell.swift */,
 				DE4D30281F86D0290034D7C1 /* Info.plist */,
 			);
 			path = EmployeeApp;
@@ -221,13 +223,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Briahna Santillana";
 				TargetAttributes = {
 					DE4D30181F86D0240034D7C1 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = BWFPD36VY3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					DE4D302C1F86D0390034D7C1 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -296,7 +303,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EmployeeApp/Pods-EmployeeApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AWSAutoScaling/AWSAutoScaling.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCloudWatch/AWSCloudWatch.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
@@ -317,7 +323,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAutoScaling.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCloudWatch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
@@ -381,9 +386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEC4B5D01FBBF92E00F36C0B /* OrderTableViewController.swift in Sources */,
-				DE4D304B1F86DA070034D7C1 /* OrderTableViewCell.swift in Sources */,
-				DE4D301F1F86D0260034D7C1 /* ViewController.swift in Sources */,
+				DE2213BB1FCCFB71003D88B3 /* OrderTableViewController.swift in Sources */,
+				DE2213C41FCD0ACE003D88B3 /* Order.swift in Sources */,
+				DE57FA931FCCBF540085FEEF /* OrderTableViewCell.swift in Sources */,
 				DE4D301D1F86D0250034D7C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2213C01FCCFFD3003D88B3 /* AppDelegate.swift in Sources */,
 				DE4D30321F86D0390034D7C1 /* EmployeeAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2213C11FCCFFD4003D88B3 /* AppDelegate.swift in Sources */,
 				DE4D303D1F86D03A0034D7C1 /* EmployeeAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +456,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -457,7 +466,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -480,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -499,7 +512,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -507,7 +522,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -524,7 +543,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -541,13 +560,17 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BWFPD36VY3;
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = EmployeeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = bsantillana.EmployeeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -560,13 +583,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BWFPD36VY3;
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = EmployeeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bsantillana.EmployeeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

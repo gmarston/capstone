@@ -33,4 +33,22 @@ class EmployeeAppTests: XCTestCase {
         }
     }
     
+    //MARK: Order Class Tests
+    
+    // Confirm that the Meal initializer returns a Meal object when passed valid parameters.
+    func testOrderInitializationSucceeds() {
+        
+        // Order Number Zero ---- Test Fails
+        let zeroOrderNumber = Order.init(orderNumber: 0, orderName: "Zero")
+        XCTAssertNotNil(zeroOrderNumber)
+        
+        // Empty Name String ---- Test Fails
+        let emptyStringName = Order.init(orderNumber: 10, orderName: "")
+        XCTAssertNil(emptyStringName)
+        
+        // Order with the correct parameters ---- Test Passes
+        let correctOrder = Order.init(orderNumber: 5, orderName: "Sam")
+        XCTAssertNil(emptyStringName)
+    }
+    
 }
