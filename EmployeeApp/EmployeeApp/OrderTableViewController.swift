@@ -41,11 +41,11 @@ class OrderTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
          // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "OrderTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? OrderTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath) as? OrderTableViewCell else {
             fatalError("The dequeued cell is not an instance of OrderTableViewCell.")
         }
+        
         
         // Fetches the appropriate meal for the data source layout.
         let order = orders[indexPath.row]
