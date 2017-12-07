@@ -9,33 +9,55 @@
 import UIKit
 import AWSSQS
 
+var messages = [AWSSQSMessage]()
+var indexes = [Int]()
+var names = [String]()
+var phoneNums = [String]()
+var refresher: UIRefreshControl!
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     
-    let pets = ["dog", "cat", "fish"]
-    let desc = ["1", "2", "3"]
+    @IBOutlet weak var tb: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString()
+        refresher.addTarget(self, action: #selector(ViewController.getAWSMessages), for: UIControlEvents.valueChanged)
+        tb?.addSubview(refresher)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getAWSMessages()
+        tb?.reloadData()
+        print("\n\n\nEND OF viewWillAppear METHOD\n\n\n")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return pets.count
+       return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
         
-        cell.orderNum.text = desc[indexPath.row]
-        cell.orderName.text = pets[indexPath.row]
+        cell.orderNum.text = "\(indexes[indexPath.row])" // cast to string
+        cell.orderName.text = names[indexPath.row]
         
         return cell
         
     }
     
-    
-    @IBOutlet weak var orderName: UILabel!
-    @IBOutlet weak var orderNum: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
+    @objc func getAWSMessages(){
         //Receiving Orders
         //USING AWS HERE
         
@@ -63,7 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     getMsgsRequest?.messageAttributeNames = ["MY_ATTRIBUTE_NAME"]
                     getMsgsRequest?.visibilityTimeout = 15
                     getMsgsRequest?.waitTimeSeconds = 15
-                    getMsgsRequest?.receiveRequestAttemptId = "myAttempt"
+                    getMsgsRequest?.receiveRequestAttemptId = "myAttemptId\(Int(arc4random_uniform(1000)))"
                     
                     // Receive the message
                     sqs.receiveMessage(getMsgsRequest!).continueWith { (task) -> AnyObject! in
@@ -75,10 +97,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         }
                         
                         if task.result != nil {
-                            let messages = (task.result?.messages)
+                            messages = (task.result?.messages)!
                             // loop through all messages
-                            print("Sucess! MESSAGES:  ")
-                            for message in messages! {
+                            print("Success! MESSAGES! ")
+                            self.splitAWSList()
+                            for message in messages {
                                 print (message.body ?? "FAILURE")
                             }
                         }
@@ -91,14 +114,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return nil
         }
         
-
+        tb?.reloadData()
+        refresher.endRefreshing()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func splitAWSList() {
+        var substrings = [String.SubSequence]()
+        var i = 0
+        while i < messages.count {
+            substrings = (messages[i].body?.split(separator: " "))!
+            indexes.insert(i, at: i)
+            names.insert(substrings[0] + " " + substrings[1], at: i)
+            phoneNums.insert("" + substrings[2], at: i)
+            i += 1
+        }
     }
-
 
 }
 
