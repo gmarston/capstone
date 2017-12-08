@@ -65,18 +65,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         sender.setTitle("Mark Ready", for: .normal)
         sender.backgroundColor = UIColor.green
         
-        if let title = sender.currentTitle{
-            switch title {
-            case "Mark Ready":
-                sender.setTitle("Mark Complete", for: .normal)
-                sender.backgroundColor = UIColor.blue
-            case "Mark Complete":
-                //test before implementing delete
-                sender.setTitle("Delete", for: .normal)
-                sender.backgroundColor = UIColor.cyan
-              default: break
-            }
-          }
+        //var title = sender.currentTitle
+        
+        if sender.currentTitle == "Mark Ready" {
+            sender.setTitle("Mark Complete", for: .normal)
+            sender.backgroundColor = UIColor.blue
+        }
+        else if sender.currentTitle == "Mark Complete" {
+            sender.setTitle("Delete", for: .normal)
+            sender.backgroundColor = UIColor.cyan
+        }
         }
 
     @objc func getAWSMessages(){
