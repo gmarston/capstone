@@ -35,25 +35,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw9-u8-xFA">
-                                                    <rect key="frame" x="20" y="21" width="87" height="57"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z92-gJ-CJX">
+                                                    <rect key="frame" x="575" y="21" width="173" height="58"/>
+                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <state key="normal" title="Mark Ready">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="orderStatusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0rs-zY-1Af"/>
+                                                        <action selector="orderStatusButton:" destination="4u8-LW-vUO" eventType="touchUpInside" id="srB-rC-TYH"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfI-hn-LzT">
+                                                    <rect key="frame" x="216" y="21" width="337" height="58"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Iw9-u8-xFA" secondAttribute="height" multiplier="2:1" constant="-27" id="gr1-vq-9q7"/>
+                                                        <constraint firstAttribute="width" secondItem="gfI-hn-LzT" secondAttribute="height" multiplier="109:22" constant="49.636363636363683" id="gsx-OZ-ruL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z92-gJ-CJX">
-                                                    <rect key="frame" x="603" y="20" width="145" height="58"/>
-                                                    <color key="backgroundColor" red="0.53196867922903079" green="0.65904544684991828" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="Mark Ready"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfI-hn-LzT">
-                                                    <rect key="frame" x="182" y="20" width="337" height="58"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw9-u8-xFA">
+                                                    <rect key="frame" x="20" y="22" width="87" height="57"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="gfI-hn-LzT" secondAttribute="height" multiplier="109:22" constant="49.636363636363683" id="gsx-OZ-ruL"/>
+                                                        <constraint firstAttribute="width" secondItem="Iw9-u8-xFA" secondAttribute="height" multiplier="2:1" constant="-27" id="gr1-vq-9q7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>

@@ -8,10 +8,20 @@
 
 import UIKit
 
+protocol OrderstatusDelegate : class {
+    func didPressButton(_ sender: UIButton)
+}
+
 class ViewControllerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var orderNum: UILabel!
     @IBOutlet weak var orderName: UILabel!
+    
+    weak var delegate: OrderstatusDelegate?
+    
+    @IBAction func orderStatusButton(_ sender: UIButton) {
+        delegate?.didPressButton(sender)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

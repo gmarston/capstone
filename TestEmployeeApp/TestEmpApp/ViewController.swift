@@ -15,10 +15,12 @@ var names = [String]()
 var phoneNums = [String]()
 var refresher: UIRefreshControl!
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OrderstatusDelegate {
 
     
     @IBOutlet weak var tb: UITableView!
+    @IBAction func orderStatusButton(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +54,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.orderNum.text = "\(indexes[indexPath.row])" // cast to string
         cell.orderName.text = names[indexPath.row]
         
+        cell.delegate = self
+        
         return cell
         
     }
+    
+    func didPressButton(_ sender: UIButton) {
+        sender.setTitle("Mark Complete", for: .normal)
+        sender.backgroundColor = UIColor.blue
+    }
+    
     
 
     @objc func getAWSMessages(){
