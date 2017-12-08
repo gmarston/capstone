@@ -7,35 +7,78 @@
 //
 
 import UIKit
+import SearchTextField
 
 class ViewController: UIViewController {
-
-    //Text Fields
-    @IBOutlet weak var fnameOutlet: UITextField!
-    @IBOutlet weak var lnameOutlet: UITextField!
-    @IBOutlet weak var phoneNumOutlet: UITextField!
     
+    // Creating list for saving user inputs
+    var firstNames = [String]()
+    var lastNames = [String]()
+    var numbers = [String]()
+    
+    //Text Fields
+    @IBOutlet weak var number: SearchTextField!
+    @IBOutlet weak var last: SearchTextField!
+    @IBOutlet weak var first: SearchTextField!
+    
+    // Button outlet
     @IBOutlet weak var enterButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: start with enter disabled until they enter valid name and phone number
-        //enterButtonOutlet.isEnabled = false
         
-        // Do any additional setup after loading the view, typically from a nib.
+        // Reading saved values from user input lists
+        let fnameDefaults = UserDefaults.standard
+        let firstNameToken = fnameDefaults.stringArray(forKey: "firstNames")
+        let lastNameToken = fnameDefaults.stringArray(forKey: "lastNames")
+        let numToken = fnameDefaults.stringArray(forKey: "numbers")
+        
+        // Setting local lists to saved data
+        firstNames = firstNameToken!
+        lastNames = lastNameToken!
+        numbers = numToken!
+        
+        // Calling autofill function
+        configureSimpleInLineSearchTextField()
+        
+    }
+    
+    // Inline search text view for autofill
+    fileprivate func configureSimpleInLineSearchTextField() {
+        // Define the inline mode
+        first.inlineMode = true
+        last.inlineMode = true
+        number.inlineMode = true
+        
+        // Set data source
+        first.filterStrings(firstNames)
+        last.filterStrings(lastNames)
+        number.filterStrings(numbers)
     }
     
     @IBAction func enterButton(_ sender: UIButton) {
         //shows order controller
         //if func deleted, seems to create problems
+
+        // Save last user input to local lists
+        firstNames.append(first.text!)
+        lastNames.append(last.text!)
+        numbers.append(number.text!)
+        
+        // Saving local lists in UserDefaults for future uses
+        let defaults = UserDefaults.standard
+        defaults.set(firstNames, forKey: "firstNames")
+        defaults.set(lastNames, forKey: "lastNames")
+        defaults.set(numbers, forKey: "numbers")
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "segue1") {
             let carriedInfo = segue.destination as! OrderController;
-            carriedInfo.firstName = fnameOutlet.text!
-            carriedInfo.lastName = lnameOutlet.text!
-            carriedInfo.phoneNum = phoneNumOutlet.text! //TODO: make type digits
+            carriedInfo.firstName = first.text!
+            carriedInfo.lastName = last.text!
+            carriedInfo.phoneNum = number.text! //TODO: make type digits
         }
     }
  
@@ -43,5 +86,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }
+
+
+
 
