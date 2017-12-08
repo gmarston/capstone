@@ -9,7 +9,7 @@
 import UIKit
 
 protocol OrderstatusDelegate : class {
-    func didPressButton(_ sender: UIButton)
+    func didPressButton(_ sender: UIButton, idx: Int)
 }
 
 class ViewControllerTableViewCell: UITableViewCell {
@@ -20,7 +20,7 @@ class ViewControllerTableViewCell: UITableViewCell {
     weak var delegate: OrderstatusDelegate?
     
     @IBAction func orderStatusButton(_ sender: UIButton) {
-        delegate?.didPressButton(sender)
+        delegate?.didPressButton(sender,idx: Int(self.orderNum.text!)!)
     }
     
     override func awakeFromNib() {

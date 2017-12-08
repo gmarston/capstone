@@ -16,6 +16,7 @@ var phoneNums = [String]()
 var refresher: UIRefreshControl!
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OrderstatusDelegate {
+    
 
     
     @IBOutlet weak var tb: UITableView!
@@ -34,9 +35,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        reloadPage()
+    }
+    
+    func reloadPage() {
         self.getAWSMessages()
         tb?.reloadData()
-        print("\n\n\nEND OF viewWillAppear METHOD\n\n\n")
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,6 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
         
+        
         cell.orderNum.text = "\(indexes[indexPath.row])" // cast to string
         cell.orderName.text = names[indexPath.row]
         
@@ -60,22 +65,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    func didPressButton(_ sender: UIButton) {
+    func didPressButton(_ sender: UIButton, idx: Int) {
         
         sender.setTitle("Mark Ready", for: .normal)
         sender.backgroundColor = UIColor.green
         
         //var title = sender.currentTitle
         
-        if sender.currentTitle == "Mark Ready" {
+        if sender.titleLabel?.text == "Mark Ready" {
             sender.setTitle("Mark Complete", for: .normal)
             sender.backgroundColor = UIColor.blue
         }
-        else if sender.currentTitle == "Mark Complete" {
-            sender.setTitle("Delete", for: .normal)
-            sender.backgroundColor = UIColor.cyan
+        else if sender.titleLabel?.text == "Mark Complete" {
+            deleteAWSMessage(idx: idx)
+//            names.remove(at: sender.tag)
+//            phoneNums.remove(at: sender.tag)
+//            indexes.remove(at: indexes.count-1)
+//            tb.reloadData()
+
         }
-        }
+    }
+    
+    
 
     @objc func getAWSMessages(){
         //Receiving Orders
@@ -117,13 +128,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         }
                         
                         if task.result != nil {
-                            messages = (task.result?.messages)!
+                            messages = (task.result!.messages)!
                             // loop through all messages
                             print("Success! MESSAGES! ")
                             self.splitAWSList()
-                            for message in messages {
-                                print (message.body ?? "FAILURE")
-                            }
+//                            for message in messages {
+//                                print (message.body ?? "FAILURE")
+//                            }
                         }
                         return nil
                     }
@@ -136,6 +147,54 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tb?.reloadData()
         refresher.endRefreshing()
+    }
+    
+    @objc func deleteAWSMessage(idx: Int){
+        //Receiving Orders
+        //USING AWS HERE
+        
+        let queueName = "BonApp.fifo"
+        let sqs = AWSSQS.default()
+        
+        // Get the queue's URL
+        let getQueueUrlRequest = AWSSQSGetQueueUrlRequest()
+        getQueueUrlRequest?.queueName = queueName
+        sqs.getQueueUrl(getQueueUrlRequest!).continueWith { (task) -> AnyObject! in
+            print("Getting queue URL")
+            if let error = task.error {
+                print(error)
+            }
+            
+            if task.result != nil {
+                if let queueUrl = task.result!.queueUrl {
+                    // Got the queue's URL, try to recieve messages from the queue
+                    
+                    let delMsgRequest = AWSSQSDeleteMessageRequest()
+                    // Params:
+                    delMsgRequest?.queueUrl = queueUrl
+                    delMsgRequest?.receiptHandle = messages[idx].receiptHandle
+                    
+                    let messageDel = messages[idx].body
+                    
+                    // Delete the message with receipt handler
+                    sqs.deleteMessage(delMsgRequest!).continueWith { (task) -> AnyObject! in
+                        if let error = task.error {
+                            print(error)
+                        }
+                        
+                        if task.result != nil {
+                            print("Success! Deleted message with: \(messageDel)")
+                        }
+                        return nil
+                    }
+                } else {
+                    // No URL found, do something?
+                }
+            }
+            return nil
+        }
+        
+        reloadPage()
     }
     
     

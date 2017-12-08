@@ -477,7 +477,6 @@
 		8D6E87180A8F2622547B731045FC7620 /* AWSCognitoSyncService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoSyncService.h; path = AWSCognito/CognitoSync/AWSCognitoSyncService.h; sourceTree = "<group>"; };
 		8DDEE5D8F8A2768C57A83E9C62AF5C34 /* AWSCognito.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AWSCognito.modulemap; sourceTree = "<group>"; };
 		8DEB28C00C9320C77C36563C8345A08E /* AWSDDContextFilterLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSDDContextFilterLogFormatter.h; path = AWSCore/Logging/Extensions/AWSDDContextFilterLogFormatter.h; sourceTree = "<group>"; };
-		8E1EBED0A17B8D3BF585EAE824A682A3 /* libAWSCognitoIdentityProviderASF.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libAWSCognitoIdentityProviderASF.a; path = AWSCognitoIdentityProviderASF/Internal/libAWSCognitoIdentityProviderASF.a; sourceTree = "<group>"; };
 		8FFB5F7BC3DD8FB28A0B252A49D80643 /* AWSURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLResponseSerialization.m; path = AWSCore/Serialization/AWSURLResponseSerialization.m; sourceTree = "<group>"; };
 		9114EC049C98E655F69FF647611DDC9A /* AWSSQSResources.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSSQSResources.m; path = AWSSQS/AWSSQSResources.m; sourceTree = "<group>"; };
 		912B353C0C6BF21367E0E2C5837A8E51 /* AWSURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSURLRequestSerialization.h; path = AWSCore/Serialization/AWSURLRequestSerialization.h; sourceTree = "<group>"; };
@@ -537,6 +536,7 @@
 		D0E03DF980F563E09E7F678808C26F83 /* AWSTMCacheBackgroundTaskManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSTMCacheBackgroundTaskManager.h; path = AWSCore/TMCache/AWSTMCacheBackgroundTaskManager.h; sourceTree = "<group>"; };
 		D1021859FA489277564632787D7EAFBE /* AWSCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSCore-prefix.pch"; sourceTree = "<group>"; };
 		D10BD1DA70C61C3FD3675FAD283331BC /* AWSUICKeyChainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSUICKeyChainStore.m; path = AWSCore/UICKeyChainStore/AWSUICKeyChainStore.m; sourceTree = "<group>"; };
+		D46775C9A28C50DAE0B50E580809CF89 /* libAWSCognitoIdentityProviderASFBinary.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libAWSCognitoIdentityProviderASFBinary.a; path = AWSCognitoIdentityProviderASF/Internal/libAWSCognitoIdentityProviderASFBinary.a; sourceTree = "<group>"; };
 		D4ACB9512B8BEC5D609E56FDDC818AAC /* AWSCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AWSCore.xcconfig; sourceTree = "<group>"; };
 		D59D94F3DF85F382D7C9B71AD0B30437 /* AWSMTLValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMTLValueTransformer.h; path = AWSCore/Mantle/AWSMTLValueTransformer.h; sourceTree = "<group>"; };
 		D7D2C92D761F5F10D5F220105692EE25 /* AWSCognitoConflict.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCognitoConflict.h; path = AWSCognito/AWSCognitoConflict.h; sourceTree = "<group>"; };
@@ -677,14 +677,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AWSCognitoIdentityProvider";
-			sourceTree = "<group>";
-		};
-		0FDF320E02D1721825C733A7888EA3DE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8E1EBED0A17B8D3BF585EAE824A682A3 /* libAWSCognitoIdentityProviderASF.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		137F36DFA3C3E2E37292841E6D84D532 /* Frameworks */ = {
@@ -904,7 +896,7 @@
 				3CE36C06D8E3489DB3096B39CD61E03C /* AWSCognitoIdentityASF.h */,
 				E100E1A83B8D07A2F96793CC8A319DF9 /* AWSCognitoIdentityProviderASF.h */,
 				3A58923206EFE4F16F9DBD0BCFA06576 /* AWSCognitoIdentityProviderASF.m */,
-				0FDF320E02D1721825C733A7888EA3DE /* Frameworks */,
+				9B06FEB90076FD62C037A9565EF29EC7 /* Frameworks */,
 				2FCA6991A46003FA3FA36AB00B7BD26F /* Support Files */,
 			);
 			name = AWSCognitoIdentityProviderASF;
@@ -974,6 +966,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AWSSQS";
+			sourceTree = "<group>";
+		};
+		9B06FEB90076FD62C037A9565EF29EC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D46775C9A28C50DAE0B50E580809CF89 /* libAWSCognitoIdentityProviderASFBinary.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B6EF971F81EAB7FAF163B30C70629155 /* AWSCognitoIdentityProvider */ = {
