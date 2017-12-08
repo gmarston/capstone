@@ -61,11 +61,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func didPressButton(_ sender: UIButton) {
-        sender.setTitle("Mark Complete", for: .normal)
-        sender.backgroundColor = UIColor.blue
-    }
-    
-    
+        
+        sender.setTitle("Mark Ready", for: .normal)
+        sender.backgroundColor = UIColor.green
+        
+        if let title = sender.currentTitle{
+            switch title {
+            case "Mark Ready":
+                sender.setTitle("Mark Complete", for: .normal)
+                sender.backgroundColor = UIColor.blue
+            case "Mark Complete":
+                //test before implementing delete
+                sender.setTitle("Delete", for: .normal)
+                sender.backgroundColor = UIColor.cyan
+              default: break
+            }
+          }
+        }
 
     @objc func getAWSMessages(){
         //Receiving Orders
