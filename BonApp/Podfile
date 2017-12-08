@@ -21,5 +21,6 @@ source 'https://github.com/CocoaPods/Specs.git'
      pod 'AWSSimpleDB'
      pod 'AWSSNS'
      pod 'AWSSQS'
+     pod 'SearchTextField'
  end
 

@@ -18,16 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1, identityPoolId:"us-east-1:ca026fca-5789-4b82-b443-d82a0bace700")
         let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
         
         AWSServiceManager.default().defaultServiceConfiguration = configuration
         
+        // Lists where the user input is stored
+        let fNames = [String]()
+        let lNames = [String]()
+        let nums = [String]()
         
-//        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USWest2,identityPoolId:"us-west-2:ae304e16-2c59-450f-95ef-4a644e7eb12b")
-//        let configuration = AWSServiceConfiguration(region:.USWest2, credentialsProvider:credentialsProvider)
-//        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        // Registering keys with list values from the user input
+        let defaults = UserDefaults.standard
+        let defaultValue = ["firstNames" : fNames, "lastNames" : lNames, "numbers": nums]
+        defaults.register(defaults: defaultValue)
         
         return true
         

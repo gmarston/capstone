@@ -15,7 +15,7 @@ class OrderController: UIViewController {
     var firstName = ""
     var lastName = ""
     var phoneNum = "" //TODO: make type digits
-    
+
     @IBOutlet weak var message: UITextView!
     @IBOutlet weak var cancelOutlet: UIButton!
     @IBOutlet weak var okOutlet: UIButton!
@@ -98,7 +98,6 @@ class OrderController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //orderLabel.text = firstName
         
         message.isHidden = true
         cancelOutlet.isHidden = true
@@ -124,9 +123,5 @@ class OrderController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    
-    
-    
 }
