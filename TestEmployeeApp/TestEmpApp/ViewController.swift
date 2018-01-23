@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSSQS
+import AWSSNS
 
 var messages = [AWSSQSMessage]()
 var indexes = [Int]()
@@ -73,6 +74,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //var title = sender.currentTitle
         
         if sender.titleLabel?.text == "Mark Ready" {
+            self.sendSMS()
+            // phoneNums[sender.tag] -> gets phone number as a string
             sender.setTitle("Mark Complete", for: .normal)
             sender.backgroundColor = UIColor.blue
         }
@@ -86,8 +89,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @objc func sendSMS(){
+    func sendSMS(){
         
+        print("sendSMS")
+        let client
+        
+        //let smsName = AWSSNSPublishInput.init()
+        let smsName = AWSSNSPublishInput()
+
+        smsName?.phoneNumber = "+15037894023"
+        smsName?.subject = "Test Subject"
+        smsName?.message = "Test Message"
+        
+        var attribute_values = [String: AWSSNSMessageAttributeValue]()
+//        let smsType = AWSSNSMessageAttributeValue.init()
+        let smsType = AWSSNSMessageAttributeValue()
+
+        smsType?.stringValue = "Promotional"
+        smsType?.dataType = "String"
+        
+//        let smsSenderID = AWSSNSMessageAttributeValue.init()
+        let smsSenderID = AWSSNSMessageAttributeValue()
+
+        smsSenderID?.stringValue = "xyz"
+        smsSenderID?.dataType = "String"
+        
+        attribute_values.updateValue(smsType!, forKey: "AWS.SNS.SMS.SMSType")
+        attribute_values.updateValue(smsSenderID!, forKey: "AWS.SNS.SMS.SenderID")
+        smsName?.messageAttributes = attribute_values
+        let messageId = AWSSNS.default().publish(smsName!)
+        print(messageId)
         
     }
     
