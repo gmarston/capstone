@@ -7,4 +7,5 @@ source 'https://github.com/CocoaPods/Specs.git'
      pod 'AWSCognito'
      pod 'AWSCognitoIdentityProvider'
      pod 'AWSSQS'
+     pod 'AWSSNS'
  end

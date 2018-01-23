@@ -1,26 +1,30 @@
 PODS:
-  - AWSCognito (2.6.8):
-    - AWSCore (= 2.6.8)
-  - AWSCognitoIdentityProvider (2.6.8):
+  - AWSCognito (2.6.11):
+    - AWSCore (= 2.6.11)
+  - AWSCognitoIdentityProvider (2.6.11):
     - AWSCognitoIdentityProviderASF (= 1.0.1)
-    - AWSCore (= 2.6.8)
+    - AWSCore (= 2.6.11)
   - AWSCognitoIdentityProviderASF (1.0.1)
-  - AWSCore (2.6.8)
-  - AWSSQS (2.6.8):
-    - AWSCore (= 2.6.8)
+  - AWSCore (2.6.11)
+  - AWSSNS (2.6.11):
+    - AWSCore (= 2.6.11)
+  - AWSSQS (2.6.11):
+    - AWSCore (= 2.6.11)
 
 DEPENDENCIES:
   - AWSCognito
   - AWSCognitoIdentityProvider
+  - AWSSNS
   - AWSSQS
 
 SPEC CHECKSUMS:
-  AWSCognito: a57d1a9295f9e05ffa55a485165e3c24b81699ba
-  AWSCognitoIdentityProvider: 4f9a1a1ed71ef2465bc3a2372d2fba03d8052f32
+  AWSCognito: 1e6f65e3512bc9332e28c64e8a36001bce6213f9
+  AWSCognitoIdentityProvider: 83b8a4dcdd83f54750ff6556f24757894c6e6062
   AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
-  AWSCore: 35fca7c45f37f5ffc4ddf75f7aa943f3588d9227
-  AWSSQS: a0c5154dc1b5f063276e24f68df5b8d24be73c62
+  AWSCore: a461695bf302a32a366768bf36056be3a2c87d8d
+  AWSSNS: 41e648984fd05f83ef50753614e9f74547abe6ca
+  AWSSQS: 9a6dfccac2cf7f1f186c73cc64580120dfb0fdc5
 
-PODFILE CHECKSUM: cf3cd05801d9dffc5d0bd7633221771c4d89e007
+PODFILE CHECKSUM: 22f83f4c48e3cbe0e5c3698a8c0a6970da30c568
 
 COCOAPODS: 1.3.1

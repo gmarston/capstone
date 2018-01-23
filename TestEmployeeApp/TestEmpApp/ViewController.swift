@@ -86,6 +86,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    @objc func sendSMS(){
+        
+        
+    }
+    
     
 
     @objc func getAWSMessages(){
@@ -128,13 +133,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         }
                         
                         if task.result != nil {
-                            messages = (task.result!.messages)!
-                            // loop through all messages
-                            print("Success! MESSAGES! ")
-                            self.splitAWSList()
-//                            for message in messages {
-//                                print (message.body ?? "FAILURE")
-//                            }
+                            if task.result?.messages != nil{
+                                messages = (task.result!.messages)!
+                                // loop through all messages
+                                print("Success! MESSAGES! ")
+                                self.splitAWSList()
+    //                            for message in messages {
+    //                                print (message.body ?? "FAILURE")
+    //                            }
+                            }
                         }
                         return nil
                     }
