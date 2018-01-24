@@ -74,8 +74,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //var title = sender.currentTitle
         
         if sender.titleLabel?.text == "Mark Ready" {
-            self.sendSMS()
-            // phoneNums[sender.tag] -> gets phone number as a string
+            self.sendSMS(name: names[idx], phoneNumber: "+1"+phoneNums[idx])
+            
             sender.setTitle("Mark Complete", for: .normal)
             sender.backgroundColor = UIColor.blue
         }
@@ -89,40 +89,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func sendSMS(){
+    func sendSMS(name: String, phoneNumber: String){
         
-        print("sendSMS")
-        let client
-        
-        //let smsName = AWSSNSPublishInput.init()
         let smsName = AWSSNSPublishInput()
-
-        smsName?.phoneNumber = "+15037894023"
-        smsName?.subject = "Test Subject"
-        smsName?.message = "Test Message"
+        smsName?.phoneNumber = phoneNumber
+        smsName?.message = "Hi \(name)! Your order is ready to be picked up. Please come " +
+            "to the pick-up counter to pay for and receive your food."
         
-        var attribute_values = [String: AWSSNSMessageAttributeValue]()
-//        let smsType = AWSSNSMessageAttributeValue.init()
-        let smsType = AWSSNSMessageAttributeValue()
-
-        smsType?.stringValue = "Promotional"
-        smsType?.dataType = "String"
-        
-//        let smsSenderID = AWSSNSMessageAttributeValue.init()
         let smsSenderID = AWSSNSMessageAttributeValue()
 
         smsSenderID?.stringValue = "xyz"
         smsSenderID?.dataType = "String"
-        
-        attribute_values.updateValue(smsType!, forKey: "AWS.SNS.SMS.SMSType")
-        attribute_values.updateValue(smsSenderID!, forKey: "AWS.SNS.SMS.SenderID")
-        smsName?.messageAttributes = attribute_values
-        let messageId = AWSSNS.default().publish(smsName!)
-        print(messageId)
-        
+   
+        AWSSNS.default().publish(smsName!).continueWith { (task) -> AnyObject? in
+            if let error = task.error {
+                print(error)
+            }
+            if task.result != nil {
+                //sent sns
+            }
+            return nil
+        }
     }
-    
-    
 
     @objc func getAWSMessages(){
         //Receiving Orders
@@ -158,9 +146,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     sqs.receiveMessage(getMsgsRequest!).continueWith { (task) -> AnyObject! in
                         if let error = task.error {
                             print(error)
-                        }
-                        if let exception = task.error {
-                            print(exception)
                         }
                         
                         if task.result != nil {
