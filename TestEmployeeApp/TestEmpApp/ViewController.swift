@@ -59,7 +59,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.orderNum.text = "\(indexes[indexPath.row])" // cast to string
         cell.orderName.text = names[indexPath.row]
-        
+        cell.orderItems.text = "Pizza"
+        cell.takeoutStatus.text = "Dine In"
         cell.delegate = self
         
         return cell

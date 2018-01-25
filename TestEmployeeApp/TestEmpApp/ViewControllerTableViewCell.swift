@@ -16,6 +16,9 @@ class ViewControllerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var orderNum: UILabel!
     @IBOutlet weak var orderName: UILabel!
+    @IBOutlet weak var orderItems: UILabel!
+    @IBOutlet weak var takeoutStatus: UILabel!
+    
     
     weak var delegate: OrderstatusDelegate?
     
