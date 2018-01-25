@@ -36,13 +36,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfI-hn-LzT">
-                                                    <rect key="frame" x="474.5" y="21" width="76.5" height="160"/>
+                                                    <rect key="frame" x="474" y="21" width="77" height="160"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw9-u8-xFA">
-                                                    <rect key="frame" x="15" y="21" width="300.5" height="160"/>
+                                                    <rect key="frame" x="15" y="21" width="302" height="160"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Iw9-u8-xFA" secondAttribute="height" multiplier="113:60" id="JcO-Ag-AuT"/>
                                                     </constraints>
@@ -66,14 +66,17 @@
                                                         <action selector="orderStatusButton:" destination="4u8-LW-vUO" eventType="touchUpInside" id="srB-rC-TYH"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gC-42-o7A" userLabel="Order Details">
-                                                    <rect key="frame" x="154" y="106" width="111" height="75"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-9x-NtS" userLabel="Takeout Status">
+                                                    <rect key="frame" x="621" y="106" width="110" height="73"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                     <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mX-9x-NtS" userLabel="Takeout Status">
-                                                    <rect key="frame" x="621" y="106" width="110" height="73"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gC-42-o7A" userLabel="Order Details">
+                                                    <rect key="frame" x="228" y="105" width="111" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="111" id="G7l-sf-QP7"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                     <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -81,20 +84,25 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Z92-gJ-CJX" firstAttribute="trailing" secondItem="FXP-LK-sBz" secondAttribute="trailingMargin" id="57f-vK-cII"/>
+                                                <constraint firstItem="7gC-42-o7A" firstAttribute="bottom" secondItem="Iw9-u8-xFA" secondAttribute="bottom" id="6iQ-Mf-kvu"/>
                                                 <constraint firstItem="gfI-hn-LzT" firstAttribute="centerX" secondItem="FXP-LK-sBz" secondAttribute="centerX" id="Gw6-ps-pkr"/>
                                                 <constraint firstItem="7mX-9x-NtS" firstAttribute="top" secondItem="FXP-LK-sBz" secondAttribute="topMargin" constant="95" id="Hc9-Cv-7N0"/>
+                                                <constraint firstItem="7gC-42-o7A" firstAttribute="leading" secondItem="FXP-LK-sBz" secondAttribute="leading" constant="170" id="Hrj-JU-fby"/>
                                                 <constraint firstItem="Iw9-u8-xFA" firstAttribute="top" secondItem="FXP-LK-sBz" secondAttribute="topMargin" constant="10" id="Oxg-I5-GFb"/>
                                                 <constraint firstItem="7gC-42-o7A" firstAttribute="top" secondItem="FXP-LK-sBz" secondAttribute="topMargin" constant="95" id="RVF-R6-Wuj"/>
                                                 <constraint firstItem="gfI-hn-LzT" firstAttribute="top" secondItem="FXP-LK-sBz" secondAttribute="topMargin" constant="10" id="eAk-Zn-Lcs"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="gfI-hn-LzT" secondAttribute="bottom" constant="8" id="fcq-c9-qvi"/>
                                                 <constraint firstItem="Iw9-u8-xFA" firstAttribute="leading" secondItem="FXP-LK-sBz" secondAttribute="leadingMargin" id="hcq-YA-LdX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Iw9-u8-xFA" secondAttribute="bottom" constant="8" id="tGL-Jn-30N"/>
+                                                <constraint firstItem="Z92-gJ-CJX" firstAttribute="leading" secondItem="7mX-9x-NtS" secondAttribute="trailing" constant="48" id="xTR-T9-9zM"/>
                                                 <constraint firstItem="Z92-gJ-CJX" firstAttribute="centerY" secondItem="FXP-LK-sBz" secondAttribute="centerY" id="y2N-2N-sEr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="orderItems" destination="7gC-42-o7A" id="L6j-m1-8tV"/>
                                             <outlet property="orderName" destination="gfI-hn-LzT" id="0g3-my-NLq"/>
                                             <outlet property="orderNum" destination="Iw9-u8-xFA" id="Z9w-Gp-Xva"/>
+                                            <outlet property="takeoutStatus" destination="7mX-9x-NtS" id="Irj-Kc-RCe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

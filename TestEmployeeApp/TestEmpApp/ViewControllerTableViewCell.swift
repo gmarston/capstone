@@ -20,6 +20,7 @@ class ViewControllerTableViewCell: UITableViewCell {
     @IBOutlet weak var takeoutStatus: UILabel!
     
     
+    
     weak var delegate: OrderstatusDelegate?
     
     @IBAction func orderStatusButton(_ sender: UIButton) {
