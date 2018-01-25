@@ -16,11 +16,48 @@ class OrderController: UIViewController {
     var lastName = ""
     var phoneNum = "" //TODO: make type digits
 
+    @IBAction func cheeseStepper(_ sender: UIStepper) {
+        cheeseCounter.text = String(Int(sender.value))
+    }
+    @IBOutlet weak var cheeseCounter: UILabel!
+    
+    @IBAction func peppStepper(_ sender: UIStepper) {
+        peppCounter.text = String(Int(sender.value))
+    }
+    @IBOutlet weak var peppCounter: UILabel!
+    
+    @IBAction func specialStepper(_ sender: UIStepper) {
+        specialCounter.text = String(Int(sender.value))
+    }
+    @IBOutlet weak var specialCounter: UILabel!
+    
+    
+    
     @IBOutlet weak var message: UITextView!
     @IBOutlet weak var cancelOutlet: UIButton!
     @IBOutlet weak var okOutlet: UIButton!
     
     @IBOutlet weak var orderLabel: UILabel!
+    
+    func getCurrentOrder() -> String {
+        var order = ""
+        if (Int(cheeseCounter.text!) != 0){
+            order += String(describing: Int(cheeseCounter.text!)) + "Cheese, "
+            print (order)
+        }
+        if (Int(peppCounter.text!) != 0){
+            order += String(describing: Int(peppCounter.text!)) + "Pepp, "
+            print (order)
+        }
+        if (Int(specialCounter.text!) != 0){
+            order += String(describing: Int(specialCounter.text!)) + "Special, "
+            print (order)
+        }
+        
+        print (order)
+        
+        return order
+    }
     
     @IBAction func placeOrderButton(_ sender: UIButton) {
         message.isHidden = false
@@ -56,7 +93,7 @@ class OrderController: UIViewController {
                     sendMsgRequest?.queueUrl = queueUrl
                     sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
                     sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
-                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum
+                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.getCurrentOrder()
                     
                     // Add message attribute if needed
                     let msgAttribute = AWSSQSMessageAttributeValue()
