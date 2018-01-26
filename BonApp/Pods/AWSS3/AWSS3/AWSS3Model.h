@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ typedef NS_ENUM(NSInteger, AWSS3BucketLocationConstraint) {
     AWSS3BucketLocationConstraintEU,
     AWSS3BucketLocationConstraintEUWest1,
     AWSS3BucketLocationConstraintEUWest2,
+    AWSS3BucketLocationConstraintEUWest3,
     AWSS3BucketLocationConstraintUSEast2,
     AWSS3BucketLocationConstraintUSWest1,
     AWSS3BucketLocationConstraintUSWest2,
@@ -67,6 +68,7 @@ typedef NS_ENUM(NSInteger, AWSS3BucketLocationConstraint) {
     AWSS3BucketLocationConstraintAPNortheast2,
     AWSS3BucketLocationConstraintSAEast1,
     AWSS3BucketLocationConstraintCNNorth1,
+    AWSS3BucketLocationConstraintCNNorthwest1,
     AWSS3BucketLocationConstraintUSGovWest1,
     AWSS3BucketLocationConstraintEUCentral1,
     AWSS3BucketLocationConstraintCACentral1,

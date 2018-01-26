@@ -869,6 +869,7 @@
 		03DDFF1D494AA2A196CB097F82E2F9F3 /* AWSMobileAnalyticsClientContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsClientContext.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsClientContext.m; sourceTree = "<group>"; };
 		0495AC0E24C55CFD7D668F2CBA3FFCBA /* AWSURLRequestRetryHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSURLRequestRetryHandler.m; path = AWSCore/Serialization/AWSURLRequestRetryHandler.m; sourceTree = "<group>"; };
 		04C372300BFD3E1822BF01BB6B010676 /* AWSFirehoseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSFirehoseModel.m; path = AWSKinesis/AWSFirehoseModel.m; sourceTree = "<group>"; };
+		04EE384E903EB94CF7A8D018B9EF5AAD /* libAWSCognitoIdentityProviderASFBinary.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libAWSCognitoIdentityProviderASFBinary.a; path = AWSCognitoIdentityProviderASF/Internal/libAWSCognitoIdentityProviderASFBinary.a; sourceTree = "<group>"; };
 		06499C78FA0B6A368504B387B6A46198 /* AWSMobileAnalyticsSubmissionTimePolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSMobileAnalyticsSubmissionTimePolicy.m; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsSubmissionTimePolicy.m; sourceTree = "<group>"; };
 		066E18D68C53A78057F0F56C6F6BA200 /* AWSElasticLoadBalancing-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AWSElasticLoadBalancing-umbrella.h"; sourceTree = "<group>"; };
 		06856A1649FF090F50290D349E875978 /* AWSAutoScalingService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSAutoScalingService.h; path = AWSAutoScaling/AWSAutoScalingService.h; sourceTree = "<group>"; };
@@ -1271,7 +1272,6 @@
 		A58FC622BF6ACF28EC77DAC0ABCEEC7C /* AWSMobileAnalyticsDefaultEventClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSMobileAnalyticsDefaultEventClient.h; path = AWSMobileAnalytics/Internal/AWSMobileAnalyticsDefaultEventClient.h; sourceTree = "<group>"; };
 		A5AE1AF45745E1FE6EEC462698B99D60 /* AWSEC2Service.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSEC2Service.h; path = AWSEC2/AWSEC2Service.h; sourceTree = "<group>"; };
 		A5E8AC56F60FA75B86C9CDD975286BCF /* AWSCognitoIdentityProvider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AWSCognitoIdentityProvider-dummy.m"; sourceTree = "<group>"; };
-		A613016440FE34884DD621BF0A0E4515 /* libAWSCognitoIdentityProviderASF.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libAWSCognitoIdentityProviderASF.a; path = AWSCognitoIdentityProviderASF/Internal/libAWSCognitoIdentityProviderASF.a; sourceTree = "<group>"; };
 		A62F43CF7109E8C3935B479AB4177A5B /* AWSXMLWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSXMLWriter.m; path = AWSCore/XMLWriter/AWSXMLWriter.m; sourceTree = "<group>"; };
 		A78115A6DFBB483985801DC7E4DA9216 /* AWSSESResources.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSESResources.h; path = AWSSES/AWSSESResources.h; sourceTree = "<group>"; };
 		A7A6B22303A6CBBCB990450215601FA5 /* aws_tommath_superclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aws_tommath_superclass.h; path = AWSCognitoIdentityProvider/Internal/JKBigInteger/LibTomMath/aws_tommath_superclass.h; sourceTree = "<group>"; };
@@ -1805,19 +1805,11 @@
 				0A59C61F2B3A0E15ACC6BE629FDA8638 /* AWSCognitoIdentityASF.h */,
 				F7FF23876754E5F919D2CB740F99C40A /* AWSCognitoIdentityProviderASF.h */,
 				C21727FCAD9A021A73659EABD2702EF0 /* AWSCognitoIdentityProviderASF.m */,
-				2EF20D876461B6266C28E5D2C7866865 /* Frameworks */,
+				407E73EACA041CEAF63DC114AABEFC63 /* Frameworks */,
 				6C487CB15EA838963C4A941D90439D2D /* Support Files */,
 			);
 			name = AWSCognitoIdentityProviderASF;
 			path = AWSCognitoIdentityProviderASF;
-			sourceTree = "<group>";
-		};
-		2EF20D876461B6266C28E5D2C7866865 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A613016440FE34884DD621BF0A0E4515 /* libAWSCognitoIdentityProviderASF.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		31AD86D9769E8B824A35621375ECAF55 /* AWSSimpleDB */ = {
@@ -1850,6 +1842,14 @@
 			);
 			name = AWSSES;
 			path = AWSSES;
+			sourceTree = "<group>";
+		};
+		407E73EACA041CEAF63DC114AABEFC63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04EE384E903EB94CF7A8D018B9EF5AAD /* libAWSCognitoIdentityProviderASFBinary.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		431ABEA871B497C1A6E5E3A0CFE93F17 /* Support Files */ = {
