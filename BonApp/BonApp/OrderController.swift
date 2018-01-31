@@ -63,13 +63,13 @@ class OrderController: UIViewController {
         //get curr order
         var order = ""
         if (Int(cheeseCounter.text!) != 0){
-            order += String( cheeseCounter.text![(cheeseCounter.text?.startIndex)!] ) + "Cheese "
+            order += "(" + String( cheeseCounter.text![(cheeseCounter.text?.startIndex)!] ) + ")Cheese "
         }
         if (Int(peppCounter.text!) != 0){
-            order += String( peppCounter.text![(peppCounter.text?.startIndex)!] ) + "Pepp "
+            order += "(" + String( peppCounter.text![(peppCounter.text?.startIndex)!] ) + ")Pepp "
         }
         if (Int(specialCounter.text!) != 0){
-            order += String( specialCounter.text![(specialCounter.text?.startIndex)!]) + "Special "
+            order += "(" + String( specialCounter.text![(specialCounter.text?.startIndex)!]) + ")Special "
         }
         
         //USE AWS HERE
@@ -93,6 +93,8 @@ class OrderController: UIViewController {
                     sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
                     sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
                     sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order
+                    
+                    //print(self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order)
 
                     // Add message attribute if needed
                     let msgAttribute = AWSSQSMessageAttributeValue()
