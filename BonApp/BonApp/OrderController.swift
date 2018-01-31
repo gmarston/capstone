@@ -17,22 +17,23 @@ class OrderController: UIViewController {
     var lastName = ""
     var phoneNum = "" //TODO: make type digits
 
+    @IBOutlet weak var cheeseStepOutlet: UIStepper!
     @IBAction func cheeseStepper(_ sender: UIStepper) {
         cheeseCounter.text = String(Int(sender.value))
     }
     @IBOutlet weak var cheeseCounter: UILabel!
     
+    @IBOutlet weak var peppStepOutlet: UIStepper!
     @IBAction func peppStepper(_ sender: UIStepper) {
         peppCounter.text = String(Int(sender.value))
     }
     @IBOutlet weak var peppCounter: UILabel!
     
+    @IBOutlet weak var specialStepOutlet: UIStepper!
     @IBAction func specialStepper(_ sender: UIStepper) {
         specialCounter.text = String(Int(sender.value))
     }
     @IBOutlet weak var specialCounter: UILabel!
-    
-    
     
     @IBOutlet weak var message: UITextView!
     @IBOutlet weak var cancelOutlet: UIButton!
@@ -40,38 +41,38 @@ class OrderController: UIViewController {
     
     @IBOutlet weak var orderLabel: UILabel!
     
-    func getCurrentOrder() -> String {
-        var order = ""
-        if (Int(cheeseCounter.text!) != 0){
-            order += String(describing: Int(cheeseCounter.text!)) + "Cheese, "
-            print (order)
-        }
-        if (Int(peppCounter.text!) != 0){
-            order += String(describing: Int(peppCounter.text!)) + "Pepp, "
-            print (order)
-        }
-        if (Int(specialCounter.text!) != 0){
-            order += String(describing: Int(specialCounter.text!)) + "Special, "
-            print (order)
-        }
-        
-        print (order)
-        
-        return order
-    }
-    
     @IBAction func placeOrderButton(_ sender: UIButton) {
-        message.isHidden = false
-        cancelOutlet.isHidden = false
-        cancelOutlet.isEnabled = true
-        okOutlet.isHidden = false
-        okOutlet.isEnabled = true
+        if ( Int(cheeseCounter.text!) != 0 || Int(peppCounter.text!) != 0 || Int(specialCounter.text!) != 0 ) {
+            message.isHidden = false
+            message.isOpaque = true
+            cancelOutlet.isHidden = false
+            cancelOutlet.isEnabled = true
+            cancelOutlet.isOpaque = true
+            okOutlet.isHidden = false
+            okOutlet.isEnabled = true
+            okOutlet.isOpaque = true
+            
+            cheeseStepOutlet.isEnabled = false
+            peppStepOutlet.isEnabled = false
+            specialStepOutlet.isEnabled = false
+        }
     }
     
     @IBAction func okButton(_ sender: UIButton) {
-        //TODO: ORDER GOES THROUGH
-        //USE AWS HERE
         
+        //get curr order
+        var order = ""
+        if (Int(cheeseCounter.text!) != 0){
+            order += String( cheeseCounter.text![(cheeseCounter.text?.startIndex)!] ) + " Cheese, "
+        }
+        if (Int(peppCounter.text!) != 0){
+            order += String( peppCounter.text![(peppCounter.text?.startIndex)!] ) + " Pepp, "
+        }
+        if (Int(specialCounter.text!) != 0){
+            order += String( specialCounter.text![(specialCounter.text?.startIndex)!]) + " Special, "
+        }
+        
+        //USE AWS HERE
         let queueName = "BonApp.fifo"
         let sqs = AWSSQS.default()
         
@@ -79,12 +80,9 @@ class OrderController: UIViewController {
         let getQueueUrlRequest = AWSSQSGetQueueUrlRequest()
         getQueueUrlRequest?.queueName = queueName
         sqs.getQueueUrl(getQueueUrlRequest!).continueWith { (task) -> AnyObject! in
-            print("Getting queue URL")
+            //print("Getting queue URL")
             if let error = task.error {
                 print(error)
-            }
-            if let exception = task.error{
-                print(exception)
             }
             
             if task.result != nil {
@@ -94,8 +92,8 @@ class OrderController: UIViewController {
                     sendMsgRequest?.queueUrl = queueUrl
                     sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
                     sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
-                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.getCurrentOrder()
-                    
+                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order
+
                     // Add message attribute if needed
                     let msgAttribute = AWSSQSMessageAttributeValue()
                     msgAttribute?.dataType = "String"
@@ -107,9 +105,6 @@ class OrderController: UIViewController {
                     sqs.sendMessage(sendMsgRequest!).continueWith { (task) -> AnyObject! in
                         if let error = task.error {
                             print(error)
-                        }
-                        if let exception = task.error {
-                            print(exception)
                         }
                         
                         if task.result != nil {
@@ -132,6 +127,10 @@ class OrderController: UIViewController {
         cancelOutlet.isEnabled = false
         okOutlet.isHidden = true
         okOutlet.isEnabled = false
+        
+        cheeseStepOutlet.isEnabled = true
+        peppStepOutlet.isEnabled = true
+        specialStepOutlet.isEnabled = true
     }
     
     override func viewDidLoad() {
@@ -142,6 +141,7 @@ class OrderController: UIViewController {
         cancelOutlet.isEnabled = false
         okOutlet.isHidden = true
         okOutlet.isEnabled = false
+
     }
     
     

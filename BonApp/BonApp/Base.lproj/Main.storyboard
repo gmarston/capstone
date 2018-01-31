@@ -106,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cheese Pizza" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TC0-Qu-Gc3">
-                                <rect key="frame" x="159" y="185" width="121" height="25"/>
+                                <rect key="frame" x="146" y="185" width="121" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -131,17 +131,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Are you sure you want to place your order? Once your order has been placed, you cannot cancel it from the app." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-jm-Gik">
-                                <rect key="frame" x="42" y="433" width="291" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIi-tW-lTz">
-                                <rect key="frame" x="42" y="536" width="146" height="48"/>
+                                <rect key="frame" x="43" y="528" width="146" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Cancel">
@@ -254,7 +245,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1O-Pf-XKc">
-                                <rect key="frame" x="187" y="536" width="146" height="48"/>
+                                <rect key="frame" x="188" y="528" width="146" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="OK">
@@ -271,17 +262,29 @@
                                     <segue destination="xU1-S9-tNe" kind="show" identifier="segue2" id="wqz-w4-ueb"/>
                                 </connections>
                             </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Are you sure you want to place your order? Once your order has been placed, you cannot cancel it from the app." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-jm-Gik">
+                                <rect key="frame" x="43" y="425" width="291" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="cancelOutlet" destination="OIi-tW-lTz" id="IOv-Vg-9RW"/>
                         <outlet property="cheeseCounter" destination="OzY-Y7-ed7" id="7UX-eh-UEg"/>
+                        <outlet property="cheeseStepOutlet" destination="qsq-Z2-HbH" id="atA-A6-CcM"/>
                         <outlet property="message" destination="4X4-jm-Gik" id="Sn3-lb-Mfq"/>
                         <outlet property="okOutlet" destination="o1O-Pf-XKc" id="um8-9V-wHm"/>
                         <outlet property="orderLabel" destination="YGQ-OO-bjw" id="TDu-Gp-CTC"/>
                         <outlet property="peppCounter" destination="pAS-qN-UdH" id="pUj-BG-938"/>
+                        <outlet property="peppStepOutlet" destination="Sik-Us-5Oh" id="rmj-45-S8T"/>
                         <outlet property="specialCounter" destination="Tep-WS-zPn" id="dIi-KO-xQx"/>
+                        <outlet property="specialStepOutlet" destination="sUE-0Z-Yd3" id="JgD-y9-qDm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzT-Hm-INh" userLabel="First Responder" sceneMemberID="firstResponder"/>
