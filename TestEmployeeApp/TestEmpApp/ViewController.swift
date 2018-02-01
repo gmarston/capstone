@@ -14,6 +14,7 @@ var messages = [AWSSQSMessage]()
 var indexes = [Int]()
 var names = [String]()
 var phoneNums = [String]()
+var orders = [String]()
 var refresher: UIRefreshControl!
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OrderstatusDelegate {
@@ -59,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.orderNum.text = "\(indexes[indexPath.row])" // cast to string
         cell.orderName.text = names[indexPath.row]
-        cell.orderItems.text = "Pizza"
+        cell.orderItems.text = orders[indexPath.row]
         cell.takeoutStatus.text = "Dine In"
         cell.delegate = self
         
@@ -207,7 +208,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         }
                         
                         if task.result != nil {
-                            print("Success! Deleted message with: \(messageDel)")
+                            print("Success! Deleted message with: " + messageDel!)
                         }
                         return nil
                     }
@@ -230,7 +231,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             indexes.insert(i, at: i)
             names.insert(substrings[0] + " " + substrings[1], at: i)
             phoneNums.insert("" + substrings[2], at: i)
-            i += 1
+//            for item in substrings{
+//                print(item)
+//            }
+            if substrings.count == 4 {
+            orders.insert("" + substrings[3], at: i)
+            }
+            else if substrings.count == 5 {
+                orders.insert(substrings[3] + " " + substrings[4], at: i)
+            }
+            else if substrings.count == 6 {
+                orders.insert(substrings[3] + " " + substrings[4] + " " + substrings[5], at: i)
+            }
+            
+            i+=1
         }
     }
 
