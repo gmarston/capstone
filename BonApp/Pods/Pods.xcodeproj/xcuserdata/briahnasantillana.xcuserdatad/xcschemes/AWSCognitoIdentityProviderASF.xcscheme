@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '018CF9D4C0F0CAFA8300802595E17CC2'
-               BlueprintName = 'AWSEC2'
+               BlueprintIdentifier = '1F1B6F6964386DE120C0637F80E21227'
+               BlueprintName = 'AWSCognitoIdentityProviderASF'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'AWSEC2.framework'>
+               BuildableName = 'AWSCognitoIdentityProviderASF.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -231,9 +231,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             indexes.insert(i, at: i)
             names.insert(substrings[0] + " " + substrings[1], at: i)
             phoneNums.insert("" + substrings[2], at: i)
-//            for item in substrings{
-//                print(item)
-//            }
             if substrings.count == 4 {
             orders.insert("" + substrings[3], at: i)
             }
