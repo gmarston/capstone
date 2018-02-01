@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSSQS
+import DLRadioButton
 
 
 class OrderController: UIViewController {
@@ -16,10 +17,21 @@ class OrderController: UIViewController {
     var firstName = ""
     var lastName = ""
     var phoneNum = "" //TODO: make type digits
+    var toGo = ""
 
+    @IBOutlet weak var dineIn: DLRadioButton!
     @IBOutlet weak var cheeseStepOutlet: UIStepper!
     @IBAction func cheeseStepper(_ sender: UIStepper) {
         cheeseCounter.text = String(Int(sender.value))
+    }
+    @IBAction func dineInAction(_ sender: DLRadioButton) {
+        if sender.tag == 0{
+            toGo = "Dine-In"
+        }
+        else{
+            toGo = "To-Go"
+        }
+        print(toGo)
     }
     @IBOutlet weak var cheeseCounter: UILabel!
     
@@ -92,7 +104,8 @@ class OrderController: UIViewController {
                     sendMsgRequest?.queueUrl = queueUrl
                     sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
                     sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
-                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order
+                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.toGo + order
+                    
                     
                     //print(self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order)
 

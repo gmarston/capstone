@@ -22,5 +22,6 @@ source 'https://github.com/CocoaPods/Specs.git'
      pod 'AWSSNS'
      pod 'AWSSQS'
      pod 'SearchTextField'
+     pod 'DLRadioButton'
  end
 

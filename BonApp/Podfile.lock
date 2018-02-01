@@ -36,6 +36,7 @@ PODS:
     - AWSCore (= 2.6.11)
   - AWSSQS (2.6.11):
     - AWSCore (= 2.6.11)
+  - DLRadioButton (1.4.11)
   - SearchTextField (1.2.0)
 
 DEPENDENCIES:
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - AWSSimpleDB
   - AWSSNS
   - AWSSQS
+  - DLRadioButton
   - SearchTextField
 
 SPEC CHECKSUMS:
@@ -78,8 +80,9 @@ SPEC CHECKSUMS:
   AWSSimpleDB: 368a6cac3202971afc32e550a4a41f960a3a4983
   AWSSNS: 41e648984fd05f83ef50753614e9f74547abe6ca
   AWSSQS: 9a6dfccac2cf7f1f186c73cc64580120dfb0fdc5
+  DLRadioButton: 0d04b8259e7bfd886571a1e9173c73fee7118f50
   SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
 
-PODFILE CHECKSUM: 0960d54d1bb09ce6fc4e3b753da7b40232b75b2c
+PODFILE CHECKSUM: 6bf2ffec9af00abb4c4392f0c8d83d7bf028f815
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.3.1
