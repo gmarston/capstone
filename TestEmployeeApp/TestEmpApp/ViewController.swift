@@ -15,6 +15,7 @@ var indexes = [Int]()
 var names = [String]()
 var phoneNums = [String]()
 var orders = [String]()
+var dineStatus = [String]()
 var refresher: UIRefreshControl!
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OrderstatusDelegate {
@@ -231,14 +232,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             indexes.insert(i, at: i)
             names.insert(substrings[0] + " " + substrings[1], at: i)
             phoneNums.insert("" + substrings[2], at: i)
+            dineStatus.insert("" + substrings[3], at: i)
             if substrings.count == 4 {
-            orders.insert("" + substrings[3], at: i)
+            orders.insert("" + substrings[4], at: i)
             }
             else if substrings.count == 5 {
-                orders.insert(substrings[3] + " " + substrings[4], at: i)
+                orders.insert(substrings[4] + " " + substrings[5], at: i)
             }
             else if substrings.count == 6 {
-                orders.insert(substrings[3] + " " + substrings[4] + " " + substrings[5], at: i)
+                orders.insert(substrings[4] + " " + substrings[5] + " " + substrings[6], at: i)
             }
             
             i+=1

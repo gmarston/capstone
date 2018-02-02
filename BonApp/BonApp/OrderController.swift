@@ -26,10 +26,10 @@ class OrderController: UIViewController {
     }
     @IBAction func dineInAction(_ sender: DLRadioButton) {
         if sender.tag == 0{
-            toGo = "Dine-In"
+            toGo = "Dine-In "
         }
         else{
-            toGo = "To-Go"
+            toGo = "To-Go "
         }
         print(toGo)
     }

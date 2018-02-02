@@ -226,7 +226,7 @@
 				TargetAttributes = {
 					93B28F511F7EEAAB0044B86A = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = U7283SFBN2;
+						DevelopmentTeam = BWFPD36VY3;
 						ProvisioningStyle = Automatic;
 					};
 					93B28F651F7EEAAD0044B86A = {
@@ -543,10 +543,10 @@
 			baseConfigurationReference = 6202D548A68835143D95C3B6 /* Pods-BonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U7283SFBN2;
+				DEVELOPMENT_TEAM = BWFPD36VY3;
 				INFOPLIST_FILE = BonApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonAppm;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonApp8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -557,10 +557,10 @@
 			baseConfigurationReference = BE9608E712B2284A5F01D995 /* Pods-BonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U7283SFBN2;
+				DEVELOPMENT_TEAM = BWFPD36VY3;
 				INFOPLIST_FILE = BonApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonAppm;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.up.marston18.BonApp8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
