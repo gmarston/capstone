@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.orderNum.text = "\(indexes[indexPath.row])" // cast to string
         cell.orderName.text = names[indexPath.row]
         cell.orderItems.text = orders[indexPath.row]
-        cell.takeoutStatus.text = "Dine In"
+        cell.takeoutStatus.text = dineStatus[indexPath.row]
         cell.delegate = self
         
         return cell
@@ -233,16 +233,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             names.insert(substrings[0] + " " + substrings[1], at: i)
             phoneNums.insert("" + substrings[2], at: i)
             dineStatus.insert("" + substrings[3], at: i)
-            if substrings.count == 4 {
-            orders.insert("" + substrings[4], at: i)
-            }
-            else if substrings.count == 5 {
-                orders.insert(substrings[4] + " " + substrings[5], at: i)
+            
+            if substrings.count == 5 {
+                orders.insert("" + substrings[4], at: i)
             }
             else if substrings.count == 6 {
+                orders.insert(substrings[4] + " " + substrings[5], at: i)
+            }
+            else if substrings.count == 7 {
                 orders.insert(substrings[4] + " " + substrings[5] + " " + substrings[6], at: i)
             }
-            
+        
             i+=1
         }
     }
