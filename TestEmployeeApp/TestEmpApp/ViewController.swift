@@ -139,7 +139,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     // Params:
                     getMsgsRequest?.queueUrl = queueUrl
                     getMsgsRequest?.attributeNames = ["MY_ATTRIBUTE_NAME"]
-                    getMsgsRequest?.maxNumberOfMessages = 10
+                    getMsgsRequest?.maxNumberOfMessages = 61
                     getMsgsRequest?.messageAttributeNames = ["MY_ATTRIBUTE_NAME"]
                     getMsgsRequest?.visibilityTimeout = 15
                     getMsgsRequest?.waitTimeSeconds = 15

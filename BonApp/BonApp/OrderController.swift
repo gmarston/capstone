@@ -13,11 +13,18 @@ import DLRadioButton
 
 class OrderController: UIViewController {
     
+    // CONSTANTS:
+    var MAX_NUM_ORDERS = 10
+    var TIME_INTERVAL_MINUTES = 10
+    
     //carried vars
     var firstName = ""
     var lastName = ""
     var phoneNum = "" //TODO: make type digits
+    
     var toGo = ""
+    var messages = [AWSSQSMessage]()
+    var numOrdersInQ = 0
 
     @IBOutlet weak var dineIn: DLRadioButton!
     @IBOutlet weak var cheeseStepOutlet: UIStepper!
@@ -26,12 +33,12 @@ class OrderController: UIViewController {
     }
     @IBAction func dineInAction(_ sender: DLRadioButton) {
         if sender.tag == 0{
-            toGo = "Dine-In "
+            toGo = "Dine-In"
         }
         else{
-            toGo = "To-Go "
+            toGo = "To-Go"
         }
-        print(toGo)
+        //print(toGo)
     }
     @IBOutlet weak var cheeseCounter: UILabel!
     
@@ -55,8 +62,27 @@ class OrderController: UIViewController {
     
     @IBAction func placeOrderButton(_ sender: UIButton) {
         if ( Int(cheeseCounter.text!) != 0 || Int(peppCounter.text!) != 0 || Int(specialCounter.text!) != 0 ) {
+            
+            self.getAWSMessages()
+            self.numOrdersInQ = self.getNumOrders()
+            print ("PO num " + String(self.numOrdersInQ))
+            
             message.isHidden = false
             message.isOpaque = true
+            
+            var order = ""
+            if (Int(cheeseCounter.text!) != 0){
+                order += "(" + String( cheeseCounter.text![(cheeseCounter.text?.startIndex)!] ) + ")Cheese "
+            }
+            if (Int(peppCounter.text!) != 0){
+                order += "(" + String( peppCounter.text![(peppCounter.text?.startIndex)!] ) + ")Pepp "
+            }
+            if (Int(specialCounter.text!) != 0){
+                order += "(" + String( specialCounter.text![(specialCounter.text?.startIndex)!]) + ")Special "
+            }
+            print("about to print")
+            message.text = "They are currently \(self.numOrdersInQ) slices of pizza that were ordered. Are you sure you want to place your order for \(order)\(toGo)? The app will take you to a screen to pay for it."
+            
             cancelOutlet.isHidden = false
             cancelOutlet.isEnabled = true
             cancelOutlet.isOpaque = true
@@ -68,6 +94,98 @@ class OrderController: UIViewController {
             peppStepOutlet.isEnabled = false
             specialStepOutlet.isEnabled = false
         }
+    }
+    
+    @objc func getAWSMessages(){
+        //Receiving Orders
+        //USING AWS HERE
+        
+        let queueName = "BonApp.fifo"
+        let sqs = AWSSQS.default()
+        
+        // Get the queue's URL
+        let getQueueUrlRequest = AWSSQSGetQueueUrlRequest()
+        getQueueUrlRequest?.queueName = queueName
+        sqs.getQueueUrl(getQueueUrlRequest!).continueWith { (task) -> AnyObject! in
+            print("Getting queue URL")
+            if let error = task.error {
+                print(error)
+            }
+            
+            if task.result != nil {
+                if let queueUrl = task.result!.queueUrl {
+                    // Got the queue's URL, try to recieve messages from the queue
+                    
+                    let getMsgsRequest = AWSSQSReceiveMessageRequest()
+                    // Params:
+                    getMsgsRequest?.queueUrl = queueUrl
+                    getMsgsRequest?.attributeNames = ["MY_ATTRIBUTE_NAME"]
+                    getMsgsRequest?.maxNumberOfMessages = 10
+                    getMsgsRequest?.messageAttributeNames = ["MY_ATTRIBUTE_NAME"]
+                    getMsgsRequest?.visibilityTimeout = 15
+                    getMsgsRequest?.waitTimeSeconds = 15
+                    getMsgsRequest?.receiveRequestAttemptId = "myAttemptId\(Int(arc4random_uniform(1000)))"
+                    
+                    // Receive the message
+                    sqs.receiveMessage(getMsgsRequest!).continueWith { (task) -> AnyObject! in
+                        if let error = task.error {
+                            print(error)
+                        }
+                        
+                        if task.result != nil {
+                            if task.result?.messages != nil{
+                                self.messages = (task.result!.messages)!
+                                self.numOrdersInQ = self.getNumOrders()
+                                print("Success! MESSAGES! ")
+                            }
+                        }
+                        return nil
+                    }
+                } else {
+                    // No URL found, do something?
+                }
+            }
+            return nil
+        }
+    }
+    
+    func getNumOrders() -> Int {
+        print("Message #: " + String(messages.count))
+        var substrings = [String.SubSequence]()
+        var orders = [String]()
+        
+        var i = 0
+        while i < messages.count {
+            substrings = (messages[i].body?.split(separator: " "))!
+    
+            if substrings.count == 5 {
+                orders.insert("" + substrings[4], at: i)
+            }
+            else if substrings.count == 6 {
+                orders.insert(substrings[4] + " " + substrings[5], at: i)
+            }
+            else if substrings.count == 7 {
+                orders.insert(substrings[4] + " " + substrings[5] + " " + substrings[6], at: i)
+            }
+            
+            i+=1
+        }
+        
+        var totalOrders = 0
+        for item in orders {
+            print(item)
+            let number = item.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            for digit in number {
+                let strDigit = String(digit)
+                if let myInt = Int(strDigit) {
+                    totalOrders += myInt
+                }
+            }
+        }
+        print("numOrders \(totalOrders)")
+        return totalOrders
+        
+        
     }
     
     @IBAction func okButton(_ sender: UIButton) {
@@ -104,7 +222,7 @@ class OrderController: UIViewController {
                     sendMsgRequest?.queueUrl = queueUrl
                     sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
                     sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
-                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.toGo + order
+                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.toGo + " " + order
                     
                     
                     //print(self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order)
@@ -135,7 +253,6 @@ class OrderController: UIViewController {
         }
     }
 
-    
     @IBAction func cancelButton(_ sender: UIButton) {
         message.isHidden = true
         cancelOutlet.isHidden = true
@@ -159,19 +276,15 @@ class OrderController: UIViewController {
 
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "segue2") {
             let carriedInfo = segue.destination as! ConfirmationController;
             carriedInfo.firstName = firstName
             carriedInfo.lastName = lastName
             carriedInfo.phoneNum = phoneNum //TODO: make type digits
-            
-            
         }
     }
  
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -154,7 +154,7 @@
                                     <segue destination="xU1-S9-tNe" kind="show" identifier="segue2" id="wqz-w4-ueb"/>
                                 </connections>
                             </button>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Are you sure you want to place your order? Once your order has been placed, you cannot cancel it from the app." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-jm-Gik">
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Are you sure you want to place your order? Once your order has been placed, you cannot cancel it from the app." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-jm-Gik">
                                 <rect key="frame" x="43" y="425" width="291" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
