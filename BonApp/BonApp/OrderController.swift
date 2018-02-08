@@ -11,6 +11,7 @@ import AWSSQS
 import DLRadioButton
 
 
+
 class OrderController: UIViewController {
     
     //carried vars
@@ -18,12 +19,15 @@ class OrderController: UIViewController {
     var lastName = ""
     var phoneNum = "" //TODO: make type digits
     var toGo = ""
-
+    
+    
+    
     @IBOutlet weak var dineIn: DLRadioButton!
     @IBOutlet weak var cheeseStepOutlet: UIStepper!
     @IBAction func cheeseStepper(_ sender: UIStepper) {
         cheeseCounter.text = String(Int(sender.value))
     }
+    
     @IBAction func dineInAction(_ sender: DLRadioButton) {
         if sender.tag == 0{
             toGo = "Dine-In"
@@ -166,8 +170,6 @@ class OrderController: UIViewController {
             carriedInfo.firstName = firstName
             carriedInfo.lastName = lastName
             carriedInfo.phoneNum = phoneNum //TODO: make type digits
-            
-            
         }
     }
  

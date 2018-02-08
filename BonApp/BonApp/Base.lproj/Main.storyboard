@@ -333,26 +333,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your estimated time of pick-up will be 15 minutes. You will receive a notification when it is ready!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW2-83-7aE">
-                                <rect key="frame" x="16" y="268" width="343" height="186"/>
+                                <rect key="frame" x="13" y="183" width="343" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Id-gO-F7w">
-                                <rect key="frame" x="146" y="525" width="85" height="35"/>
+                                <rect key="frame" x="142" y="377" width="85" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90343669039999996" green="0.90343669039999996" blue="0.90343669039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-hV-evv">
+                                <rect key="frame" x="16" y="549" width="329" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pay" image="ApplePay_PayWithApplePay_2x"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPY-vj-74o" customClass="PKPaymentButton">
+                                <rect key="frame" x="16" y="549" width="329" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pay" image="ApplePay_PayWithApplePay_2x"/>
                                 <connections>
-                                    <segue destination="MfA-iB-jPG" kind="show" id="72F-No-5sY"/>
+                                    <action selector="payAction:" destination="xU1-S9-tNe" eventType="touchUpInside" id="C6v-aK-pVT"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="payButton" destination="cPY-vj-74o" id="v0A-5K-1wn"/>
                         <outlet property="thanksLabel" destination="spc-wW-c6N" id="3PE-Rp-gf2"/>
                     </connections>
                 </viewController>
@@ -379,4 +390,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ApplePay_PayWithApplePay_2x" width="734" height="116"/>
+    </resources>
 </document>
