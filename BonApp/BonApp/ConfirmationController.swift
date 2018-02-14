@@ -6,6 +6,9 @@
 //  Copyright © 2017 Giselle Marston. All rights reserved.
 //
 
+
+// order -> confirmation -> apple pay -> queue
+
 import UIKit
 import PassKit
 
@@ -43,7 +46,6 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
             paymentRequest.merchantIdentifier = "merchant.edu.up.marston18.BonAppDeveloper"
             paymentRequest.supportedNetworks = paymentNetworks
             paymentRequest.merchantCapabilities = .capability3DS
-            paymentRequest.requiredShippingAddressFields = [.all]
             paymentRequest.paymentSummaryItems = self.itemToSell(shipping: 0.00)
             
             let applePayVC = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)
@@ -51,13 +53,9 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
             self.present(applePayVC!, animated: true, completion: nil)
         }
         else{
-            print("User needs to set up Apple Pay")
+            print("Please set up Apple Pay")
         }
-        
-        
-        
     }
-    
     
     //carried vars
     var firstName = ""
@@ -75,8 +73,5 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-   
     
 }
