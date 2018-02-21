@@ -13,6 +13,15 @@ import UIKit
 import PassKit
 
 class ConfirmationController: UIViewController, PKPaymentAuthorizationViewControllerDelegate {
+    
+    //carried vars
+    var firstName = ""
+    var lastName = ""
+    var phoneNum = "" //TODO: make type digits
+    var totalPrice = 0.00
+    //var subTotal: NSDecimalNumber
+    
+    
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, completion: @escaping (PKPaymentAuthorizationStatus, [PKPaymentSummaryItem])->Void ) {
         completion(PKPaymentAuthorizationStatus.success, itemToSell(shipping: 0.00))
     }
@@ -31,10 +40,11 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
+
     func itemToSell(shipping: Float) -> [PKPaymentSummaryItem]{
-        let cheesePizza = PKPaymentSummaryItem(label: "Cheese Pizza", amount: 3.50)
-        return [cheesePizza]
+        // use totalPrice
+        let orderTotal = PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(value: totalPrice))
+        return [orderTotal]
     }
     
     @IBAction func payAction(_ sender: Any) {
@@ -47,7 +57,6 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
             paymentRequest.supportedNetworks = paymentNetworks
             paymentRequest.merchantCapabilities = .capability3DS
             paymentRequest.paymentSummaryItems = self.itemToSell(shipping: 0.00)
-            
             let applePayVC = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)
             applePayVC?.delegate = self
             self.present(applePayVC!, animated: true, completion: nil)
@@ -57,10 +66,6 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
         }
     }
     
-    //carried vars
-    var firstName = ""
-    var lastName = ""
-    var phoneNum = "" //TODO: make type digits
     
     @IBOutlet weak var thanksLabel: UILabel!
     

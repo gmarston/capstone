@@ -26,6 +26,7 @@ class OrderController: UIViewController {
     var toGo = ""
     var messages = [AWSSQSMessage]()
     var numOrdersInQ = 0
+    var totalOrderCount = 0
 
     @IBOutlet weak var dineIn: DLRadioButton!
     @IBOutlet weak var cheeseStepOutlet: UIStepper!
@@ -95,6 +96,9 @@ class OrderController: UIViewController {
             cheeseStepOutlet.isEnabled = false
             peppStepOutlet.isEnabled = false
             specialStepOutlet.isEnabled = false
+            
+            totalOrderCount = Int(cheeseCounter.text!)! + Int(peppCounter.text!)! + Int(specialCounter.text!)!
+            
         }
     }
 
@@ -186,8 +190,6 @@ class OrderController: UIViewController {
         }
         print("numOrders \(totalOrders)")
         return totalOrders
-
-
     }
 
     @IBAction func okButton(_ sender: UIButton) {
@@ -284,6 +286,7 @@ class OrderController: UIViewController {
             carriedInfo.firstName = firstName
             carriedInfo.lastName = lastName
             carriedInfo.phoneNum = phoneNum //TODO: make type digits
+            carriedInfo.totalPrice = Double(totalOrderCount) * 3.50
         }
     }
 
