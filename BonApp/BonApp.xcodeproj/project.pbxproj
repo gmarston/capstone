@@ -16,6 +16,7 @@
 		93B28F601F7EEAAC0044B86A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B28F5E1F7EEAAC0044B86A /* LaunchScreen.storyboard */; };
 		93B28F6B1F7EEAAD0044B86A /* BonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F6A1F7EEAAD0044B86A /* BonAppTests.swift */; };
 		93B28F761F7EEAAD0044B86A /* BonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */; };
+		AD1E8C5D20478D000083F741 /* TimeEstimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1E8C5C20478D000083F741 /* TimeEstimateController.swift */; };
 		AD7902C1202BC802005283E0 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7902C0202BC802005283E0 /* PassKit.framework */; };
 		D339ECAF3CD033DCE7E356F1 /* Pods_BonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB32A400C68BAD572506B73 /* Pods_BonApp.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		93B28F711F7EEAAD0044B86A /* BonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B28F751F7EEAAD0044B86A /* BonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonAppUITests.swift; sourceTree = "<group>"; };
 		93B28F771F7EEAAD0044B86A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1E8C5C20478D000083F741 /* TimeEstimateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEstimateController.swift; sourceTree = "<group>"; };
 		AD7902BF202BC7CE005283E0 /* BonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BonApp.entitlements; sourceTree = "<group>"; };
 		AD7902C0202BC802005283E0 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		BE9608E712B2284A5F01D995 /* Pods-BonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BonApp/Pods-BonApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				93B28F551F7EEAAC0044B86A /* AppDelegate.swift */,
 				93B28F571F7EEAAC0044B86A /* ViewController.swift */,
 				93B28F591F7EEAAC0044B86A /* Main.storyboard */,
+				AD1E8C5C20478D000083F741 /* TimeEstimateController.swift */,
 				93B28F5C1F7EEAAC0044B86A /* Assets.xcassets */,
 				93B28F5E1F7EEAAC0044B86A /* LaunchScreen.storyboard */,
 				93B28F611F7EEAAC0044B86A /* Info.plist */,
@@ -405,6 +408,7 @@
 				93B28F581F7EEAAC0044B86A /* ViewController.swift in Sources */,
 				937B32F91FAAB59400A6BF47 /* ConfirmationController.swift in Sources */,
 				93B28F561F7EEAAC0044B86A /* AppDelegate.swift in Sources */,
+				AD1E8C5D20478D000083F741 /* TimeEstimateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

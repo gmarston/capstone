@@ -11,6 +11,7 @@
 
 import UIKit
 import PassKit
+import AWSSQS
 
 class ConfirmationController: UIViewController, PKPaymentAuthorizationViewControllerDelegate {
     
@@ -19,9 +20,66 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
     var lastName = ""
     var phoneNum = "" //TODO: make type digits
     var totalPrice = 0.00
-    //var subTotal: NSDecimalNumber
+    var numOrdersInQ = 0
+    var paymentSucceeded = false
+    var theOrder = ""
+    var numSlices = 0
+    
+    @IBOutlet weak var toPayTextView: UITextView!
+    
+    @IBAction func sendOrderButton(_ sender: UIButton) {
+        //USE AWS HERE
+        let queueName = "BonApp.fifo"
+        let sqs = AWSSQS.default()
+
+        // Get the queue's URL
+        let getQueueUrlRequest = AWSSQSGetQueueUrlRequest()
+        getQueueUrlRequest?.queueName = queueName
+        sqs.getQueueUrl(getQueueUrlRequest!).continueWith { (task) -> AnyObject! in
+            //print("Getting queue URL")
+            if let error = task.error {
+                print(error)
+            }
+
+            if task.result != nil {
+                if let queueUrl = task.result!.queueUrl {
+                    // Got the queue's URL, try to send the message to the queue
+                    let sendMsgRequest = AWSSQSSendMessageRequest()
+                    sendMsgRequest?.queueUrl = queueUrl
+                    sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
+                    sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
+                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.theOrder
+
+
+                    //print(self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order)
+
+                    // Add message attribute if needed
+                    let msgAttribute = AWSSQSMessageAttributeValue()
+                    msgAttribute?.dataType = "String"
+                    msgAttribute?.stringValue = "MY ATTRIBUTE VALUE"
+                    sendMsgRequest?.messageAttributes = [:]
+                    sendMsgRequest?.messageAttributes!["MY_ATTRIBUTE_NAME"] = msgAttribute
+
+                    // Send the message
+                    sqs.sendMessage(sendMsgRequest!).continueWith { (task) -> AnyObject! in
+                        if let error = task.error {
+                            print(error)
+                        }
+
+                        if task.result != nil {
+                            print("Success! Check the queue on AWS console!")
+                        }
+                        return nil
+                    }
+                } else {
+                    // No URL found, do something?
+                }
+            }
+            return nil
+        }
     
     
+    }
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, completion: @escaping (PKPaymentAuthorizationStatus, [PKPaymentSummaryItem])->Void ) {
         completion(PKPaymentAuthorizationStatus.success, itemToSell(shipping: 0.00))
     }
@@ -67,11 +125,30 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
     }
     
     
-    @IBOutlet weak var thanksLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        thanksLabel.text = "Thank you for your order, \(firstName) \(lastName)!"
+        toPayTextView.isHidden = false
+        print("numOrdersInQ in C: \(numOrdersInQ)")
+        if (numOrdersInQ > 15){ // TOO MANY ORDERS IN QUEUE --> DON'T LET ORDER GO THROUGH
+            payButton.isEnabled = false
+            payButton.isHidden = true
+            toPayTextView.text = "Hi, \(firstName) \(lastName)! There are currently \(numOrdersInQ) slices to be picked up so we cannot take your order. Please try again later."
+            
+        }
+        else{
+            toPayTextView.text = "Hi, \(firstName) \(lastName)! Please continue paying for \(theOrder)."
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "segue3") {
+            let carriedInfo = segue.destination as! TimeEstimateController;
+            print("CC: \(numSlices + numOrdersInQ)")
+            carriedInfo.numOrders = numSlices + numOrdersInQ
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {

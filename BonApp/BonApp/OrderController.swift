@@ -27,6 +27,8 @@ class OrderController: UIViewController {
     var messages = [AWSSQSMessage]()
     var numOrdersInQ = 0
     var totalOrderCount = 0
+    var theOrder = ""
+    var numSlicesToBuy = 0
 
     @IBOutlet weak var dineIn: DLRadioButton!
     @IBOutlet weak var cheeseStepOutlet: UIStepper!
@@ -72,19 +74,27 @@ class OrderController: UIViewController {
 
             message.isHidden = false
             message.isOpaque = true
+            
+            let cheese = Int(cheeseCounter.text!)
+            let pepp = Int(peppCounter.text!)
+            let spec = Int(specialCounter.text!)
 
             var order = ""
             if (Int(cheeseCounter.text!) != 0){
                 order += "(" + String( cheeseCounter.text![(cheeseCounter.text?.startIndex)!] ) + ")Cheese "
+                numSlicesToBuy += cheese!
             }
             if (Int(peppCounter.text!) != 0){
                 order += "(" + String( peppCounter.text![(peppCounter.text?.startIndex)!] ) + ")Pepp "
+                numSlicesToBuy += pepp!
             }
             if (Int(specialCounter.text!) != 0){
                 order += "(" + String( specialCounter.text![(specialCounter.text?.startIndex)!]) + ")Special "
+                numSlicesToBuy += spec!
             }
             print("about to print")
-            message.text = "They are currently \(self.numOrdersInQ) slices of pizza that were ordered. Are you sure you want to place your order for \(order)\(toGo)? The app will take you to a screen to pay for it."
+            theOrder = toGo + " " + order
+            message.text = "Are you sure you want to place your order for \(order)\(toGo)? The app will take you to a screen to pay for it."
 
             cancelOutlet.isHidden = false
             cancelOutlet.isEnabled = true
@@ -206,55 +216,7 @@ class OrderController: UIViewController {
             order += "(" + String( specialCounter.text![(specialCounter.text?.startIndex)!]) + ")Special "
         }
 
-        //USE AWS HERE
-        let queueName = "BonApp.fifo"
-        let sqs = AWSSQS.default()
 
-        // Get the queue's URL
-        let getQueueUrlRequest = AWSSQSGetQueueUrlRequest()
-        getQueueUrlRequest?.queueName = queueName
-        sqs.getQueueUrl(getQueueUrlRequest!).continueWith { (task) -> AnyObject! in
-            //print("Getting queue URL")
-            if let error = task.error {
-                print(error)
-            }
-
-            if task.result != nil {
-                if let queueUrl = task.result!.queueUrl {
-                    // Got the queue's URL, try to send the message to the queue
-                    let sendMsgRequest = AWSSQSSendMessageRequest()
-                    sendMsgRequest?.queueUrl = queueUrl
-                    sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
-                    sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
-                    sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.toGo + " " + order
-
-
-                    //print(self.firstName + " " + self.lastName + " " + self.phoneNum + " " + order)
-
-                    // Add message attribute if needed
-                    let msgAttribute = AWSSQSMessageAttributeValue()
-                    msgAttribute?.dataType = "String"
-                    msgAttribute?.stringValue = "MY ATTRIBUTE VALUE"
-                    sendMsgRequest?.messageAttributes = [:]
-                    sendMsgRequest?.messageAttributes!["MY_ATTRIBUTE_NAME"] = msgAttribute
-
-                    // Send the message
-                    sqs.sendMessage(sendMsgRequest!).continueWith { (task) -> AnyObject! in
-                        if let error = task.error {
-                            print(error)
-                        }
-
-                        if task.result != nil {
-                            print("Success! Check the queue on AWS console!")
-                        }
-                        return nil
-                    }
-                } else {
-                    // No URL found, do something?
-                }
-            }
-            return nil
-        }
     }
 
     @IBAction func cancelButton(_ sender: UIButton) {
@@ -287,6 +249,11 @@ class OrderController: UIViewController {
             carriedInfo.lastName = lastName
             carriedInfo.phoneNum = phoneNum //TODO: make type digits
             carriedInfo.totalPrice = Double(totalOrderCount) * 3.50
+            carriedInfo.numOrdersInQ = numOrdersInQ
+            carriedInfo.theOrder = theOrder
+            carriedInfo.numSlices = numSlicesToBuy
+
+            print(numOrdersInQ)
         }
     }
 
