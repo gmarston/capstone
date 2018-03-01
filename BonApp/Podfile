@@ -23,5 +23,6 @@ source 'https://github.com/CocoaPods/Specs.git'
      pod 'AWSSQS'
      pod 'SearchTextField'
      pod 'DLRadioButton'
+     pod 'Stripe'
  end
 

@@ -9,6 +9,7 @@
 import UIKit
 import AWSCore
 import AWSCognito
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_NhVTOR0v0sGmMns9r7mGbxvv"
+        STPPaymentConfiguration.shared().appleMerchantIdentifier = "merchant.edu.up.marston18.BonAppDeveloper"
+
+ 
         
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1, identityPoolId:"us-east-1:ca026fca-5789-4b82-b443-d82a0bace700")
         let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
