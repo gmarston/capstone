@@ -24,6 +24,7 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
     var paymentSucceeded = false
     var theOrder = ""
     var numSlices = 0
+    var numOrders = 0
     
     @IBOutlet weak var toPayTextView: UITextView!
     
@@ -147,7 +148,6 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
             let carriedInfo = segue.destination as! TimeEstimateController;
             print("CC: \(numSlices + numOrdersInQ)")
             carriedInfo.numOrders = numSlices + numOrdersInQ
-            
         }
     }
     

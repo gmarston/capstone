@@ -13,7 +13,9 @@ class TimeEstimateController: UIViewController {
     var numOrders = 0
 
     @IBOutlet weak var confirmTextView: UITextView!
+    
     override func viewDidLoad() {
+        print("numOrders: \(numOrders)")
         super.viewDidLoad()
         confirmTextView.isHidden = false
         confirmTextView.text = "Your order has gone through! We estimate that it will be ready for pick-up in \(numOrders*2) minutes. We will also send you a SMS message when it's ready. Thanks!"
