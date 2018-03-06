@@ -36,6 +36,8 @@ class OrderController: UIViewController {
         cheeseCounter.text = String(Int(sender.value))
     }
 
+    
+    
     @IBAction func dineInAction(_ sender: DLRadioButton) {
         if sender.tag == 0{
             toGo = "Dine-In"
@@ -43,8 +45,8 @@ class OrderController: UIViewController {
         else{
             toGo = "To-Go"
         }
-        //print(toGo)
     }
+    
     @IBOutlet weak var cheeseCounter: UILabel!
 
     @IBOutlet weak var peppStepOutlet: UIStepper!
@@ -234,6 +236,7 @@ class OrderController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //dineIn.isSelected = true
         message.isHidden = true
         cancelOutlet.isHidden = true
         cancelOutlet.isEnabled = false

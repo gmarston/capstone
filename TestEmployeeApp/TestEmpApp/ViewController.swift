@@ -97,7 +97,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let smsName = AWSSNSPublishInput()
         smsName?.phoneNumber = phoneNumber
         smsName?.message = "Hi \(name)! Your order is ready to be picked up. Please come " +
-            "to the pick-up counter to pay for and receive your food."
+            "to the pick-up counter to get your food."
         
         let smsSenderID = AWSSNSMessageAttributeValue()
 
@@ -139,7 +139,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     // Params:
                     getMsgsRequest?.queueUrl = queueUrl
                     getMsgsRequest?.attributeNames = ["MY_ATTRIBUTE_NAME"]
-                    getMsgsRequest?.maxNumberOfMessages = 61
+                    getMsgsRequest?.maxNumberOfMessages = 10
                     getMsgsRequest?.messageAttributeNames = ["MY_ATTRIBUTE_NAME"]
                     getMsgsRequest?.visibilityTimeout = 15
                     getMsgsRequest?.waitTimeSeconds = 15
