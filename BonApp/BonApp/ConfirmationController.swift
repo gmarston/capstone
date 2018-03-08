@@ -48,7 +48,7 @@ class ConfirmationController: UIViewController, PKPaymentAuthorizationViewContro
                     let sendMsgRequest = AWSSQSSendMessageRequest()
                     sendMsgRequest?.queueUrl = queueUrl
                     sendMsgRequest?.messageGroupId = "MyMessageGroupId1234567890"
-                    sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId1234567890"
+                    sendMsgRequest?.messageDeduplicationId = "MyMessageDeduplicationId\(Int(arc4random_uniform(1000)))"
                     sendMsgRequest?.messageBody = self.firstName + " " + self.lastName + " " + self.phoneNum + " " + self.theOrder
 
 
