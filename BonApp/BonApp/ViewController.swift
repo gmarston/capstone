@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var numbers = [String]()
     
     //Text Fields
+    @IBOutlet weak var errorOutlet: UITextView!
     @IBOutlet weak var number: SearchTextField!
     @IBOutlet weak var last: SearchTextField!
     @IBOutlet weak var first: SearchTextField!
@@ -57,19 +58,54 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterButton(_ sender: UIButton) {
-        //shows order controller
-        //if func deleted, seems to create problems
-
-        // Save last user input to local lists
-        firstNames.append(first.text!)
-        lastNames.append(last.text!)
-        numbers.append(number.text!)
+        var error = ""
+        var valid = true
         
-        // Saving local lists in UserDefaults for future uses
-        let defaults = UserDefaults.standard
-        defaults.set(firstNames, forKey: "firstNames")
-        defaults.set(lastNames, forKey: "lastNames")
-        defaults.set(numbers, forKey: "numbers")
+        if number.text?.count == 10 && Int(number.text!) != nil {}
+        else {
+            valid = false
+            error += "Please enter a valid 10 digit number without spaces, parentheses, or dashes. Ex: 5039876768 "
+        }
+        
+        let firstStr = first.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let lastStr = last.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if(firstStr.count < 1 || lastStr.count < 1){
+            valid = false
+            error += "Names must have at least one character."
+        } else {
+            let names = firstStr + lastStr
+            for chr in names {
+                if (chr >= "a" && chr <= "z") || (chr >= "A" && chr <= "Z") {}
+                else {
+                    valid = false
+                    error += "Please enter a name with only letters. "
+                    break
+                }
+            }
+        }
+        
+  
+        if(!valid) {
+            errorOutlet.text = error
+            errorOutlet.isHidden = false
+        } else{
+            
+            // Save last user input to local lists
+            firstNames.append(first.text!)
+            lastNames.append(last.text!)
+            numbers.append(number.text!)
+            
+            // Saving local lists in UserDefaults for future uses
+            let defaults = UserDefaults.standard
+            defaults.set(firstNames, forKey: "firstNames")
+            defaults.set(lastNames, forKey: "lastNames")
+            defaults.set(numbers, forKey: "numbers")
+            errorOutlet.isHidden = true
+            
+            //shows order controller
+            self.performSegue(withIdentifier: "segue1", sender: nil)
+        }
+
 
     }
     
