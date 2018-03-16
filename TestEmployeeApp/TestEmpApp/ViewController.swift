@@ -20,12 +20,12 @@ var refresher: UIRefreshControl!
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OrderstatusDelegate {
     
-
-    
+    //outlets connecting from the Employee App UI
     @IBOutlet weak var tb: UITableView!
     @IBAction func orderStatusButton(_ sender: UIButton) {
     }
     
+   //initial function called when the app is launched
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         reloadPage()
     }
     
+    //function called to reload the AWS queue and fetch the items on it
     func reloadPage() {
         self.getAWSMessages()
         tb?.reloadData()
@@ -51,14 +52,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    //returns the number of current orders in the queue
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return messages.count
     }
     
+    //function loops through the tableView UI to enter the data from the online AWS queue in to each cell of the queue in the EmployeeApp
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
-        
-        
+     
         cell.orderNum.text = "\(indexes[indexPath.row])" // cast to string
         cell.orderName.text = names[indexPath.row]
         cell.orderItems.text = orders[indexPath.row]
@@ -69,13 +72,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    //function to check if an employee pressed the order status button and updates the button accordingly and sends a text message
     func didPressButton(_ sender: UIButton, idx: Int) {
         
         sender.setTitle("Mark Ready", for: .normal)
         sender.backgroundColor = UIColor.green
-        
-        //var title = sender.currentTitle
-        
+      
         if sender.titleLabel?.text == "Mark Ready" {
             self.sendSMS(name: names[idx], phoneNumber: "+1"+phoneNums[idx])
             
@@ -84,14 +86,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         else if sender.titleLabel?.text == "Mark Complete" {
             deleteAWSMessage(idx: idx)
-//            names.remove(at: sender.tag)
-//            phoneNums.remove(at: sender.tag)
-//            indexes.remove(at: indexes.count-1)
-//            tb.reloadData()
 
         }
     }
     
+    //function that sends a text message to the corresponding customer when the order status button is pressed for their order
     func sendSMS(name: String, phoneNumber: String){
         
         let smsName = AWSSNSPublishInput()
@@ -109,16 +108,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print(error)
             }
             if task.result != nil {
-                //sent sns
+                //sent sms
             }
             return nil
         }
-    }
-
-    @objc func getAWSMessages(){
-        //Receiving Orders
-        //USING AWS HERE
         
+    //function that actually gets the orders from the online AWS queue using specific attributes
+    @objc func getAWSMessages(){
+        
+        //Receiving Orders
         let queueName = "BonApp.fifo"
         let sqs = AWSSQS.default()
         
@@ -143,6 +141,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     getMsgsRequest?.messageAttributeNames = ["MY_ATTRIBUTE_NAME"]
                     getMsgsRequest?.visibilityTimeout = 15
                     getMsgsRequest?.waitTimeSeconds = 15
+                    //generate rand num to fix issue with all orders not going through 
                     getMsgsRequest?.receiveRequestAttemptId = "myAttemptId\(Int(arc4random_uniform(1000)))"
                     
                     // Receive the message
@@ -175,6 +174,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         refresher.endRefreshing()
     }
     
+    //function to delete an order off the online AWs queue using many of the same attributes as getAWSMessages
     @objc func deleteAWSMessage(idx: Int){
         //Receiving Orders
         //USING AWS HERE
@@ -223,7 +223,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         reloadPage()
     }
     
-    
+    //function to split up the data from the online AWS queue so that it can properly be displayed on the EmployeeApp queue
     func splitAWSList() {
         var substrings = [String.SubSequence]()
         var i = 0
