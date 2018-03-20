@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,23 +18,28 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2018-03-07 at 5.02.59 PM" translatesAutoresizingMaskIntoConstraints="NO" id="WYW-Uv-cLT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BonAppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="WYW-Uv-cLT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WYW-Uv-cLT" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="4v0-RY-Ras"/>
+                            <constraint firstItem="WYW-Uv-cLT" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5Rk-hY-AfD"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="WYW-Uv-cLT" secondAttribute="bottom" id="D1Z-bN-Sk9"/>
+                            <constraint firstAttribute="trailing" secondItem="WYW-Uv-cLT" secondAttribute="trailing" id="Dg7-9r-uNd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="49.275362318840585" y="373.36956521739131"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Screen Shot 2018-03-07 at 5.02.59 PM" width="271" height="229"/>
+        <image name="BonAppLogo" width="2048" height="2048"/>
     </resources>
 </document>
