@@ -22,8 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //outlets connecting from the Employee App UI
     @IBOutlet weak var tb: UITableView!
-    @IBAction func orderStatusButton(_ sender: UIButton) {
-    }
+    @IBAction func orderStatusButton(_ sender: UIButton) {}
     
    //initial function called when the app is launched
     override func viewDidLoad() {
@@ -69,7 +68,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.delegate = self
         
         return cell
-        
     }
     
     //function to check if an employee pressed the order status button and updates the button accordingly and sends a text message
@@ -86,7 +84,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         else if sender.titleLabel?.text == "Mark Complete" {
             deleteAWSMessage(idx: idx)
-
         }
     }
     
@@ -112,6 +109,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             return nil
         }
+    }
         
     //function that actually gets the orders from the online AWS queue using specific attributes
     @objc func getAWSMessages(){

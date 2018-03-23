@@ -324,7 +324,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="qsq-Z2-HbH">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="qsq-Z2-HbH">
                                 <rect key="frame" x="13" y="155" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.18798380179999999" green="0.027097534029999999" blue="0.5584747779" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -339,7 +339,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="Sik-Us-5Oh">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="Sik-Us-5Oh">
                                 <rect key="frame" x="13" y="238" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -360,7 +360,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="sUE-0Z-Yd3">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="sUE-0Z-Yd3">
                                 <rect key="frame" x="13" y="317" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -541,7 +541,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Your order has gone through!          We estimate that it will be ready for pick-up in 15 minutes. ">
                                         <attributes>
-                                            <color key="NSColor" red="0.17925304749655402" green="0.03200536408042659" blue="0.47364768400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.17925304750000001" green="0.032005364080000001" blue="0.47364768400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="21" name="Optima-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
