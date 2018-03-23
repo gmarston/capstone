@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+//        view.addGestureRecognizer(tap)
+        
         // Reading saved values from user input lists
         let fnameDefaults = UserDefaults.standard
         let firstNameToken = fnameDefaults.stringArray(forKey: "firstNames")
@@ -43,6 +46,14 @@ class ViewController: UIViewController {
         configureSimpleInLineSearchTextField()
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+//    func dismissKeyboard(){
+//        view.endEditing(true)
+//    }
     
     // Inline search text view for autofill
     fileprivate func configureSimpleInLineSearchTextField() {

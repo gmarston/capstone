@@ -251,7 +251,11 @@ class OrderController: UIViewController {
             carriedInfo.firstName = firstName
             carriedInfo.lastName = lastName
             carriedInfo.phoneNum = phoneNum //TODO: make type digits
-            carriedInfo.totalPrice = Double(totalOrderCount) * 3.50
+            if(toGo == "To-Go"){
+                carriedInfo.totalPrice = Double(totalOrderCount) * 3.50 + 0.50
+            } else {
+                carriedInfo.totalPrice = Double(totalOrderCount) * 3.50
+            }
             carriedInfo.numOrdersInQ = numOrdersInQ
             carriedInfo.theOrder = theOrder
             carriedInfo.numSlices = numSlicesToBuy
